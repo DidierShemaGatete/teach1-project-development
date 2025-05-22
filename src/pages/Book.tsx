@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -15,6 +15,20 @@ const Book = () => {
   const { toast } = useToast();
   const [step, setStep] = useState(1);
   const [serviceType, setServiceType] = useState("");
+  const [autoAdvance, setAutoAdvance] = useState(false);
+  const isMobileRef = useRef(false);
+
+  // Check if the device is mobile based on screen width
+  useEffect(() => {
+    const checkMobile = () => {
+      isMobileRef.current = window.innerWidth < 768;
+      setAutoAdvance(isMobileRef.current);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,6 +52,27 @@ const Book = () => {
   const prevStep = () => {
     setStep(step - 1);
     window.scrollTo(0, 0);
+  };
+
+  // Handle service selection with auto-advance for mobile
+  const handleServiceChange = (value: string) => {
+    setServiceType(value);
+    
+    // Auto-advance to next step on mobile
+    if (autoAdvance) {
+      setTimeout(() => {
+        nextStep();
+      }, 300); // Small delay for better UX
+    }
+  };
+
+  // Handle time selection with auto-advance for mobile
+  const handleTimeChange = (value: string) => {
+    if (autoAdvance && step === 2) {
+      setTimeout(() => {
+        nextStep();
+      }, 300);
+    }
   };
 
   return (
@@ -87,7 +122,7 @@ const Book = () => {
                     <div className="space-y-4">
                       <RadioGroup 
                         value={serviceType} 
-                        onValueChange={setServiceType}
+                        onValueChange={handleServiceChange}
                         className="grid grid-cols-1 md:grid-cols-2 gap-4"
                       >
                         <div className="col-span-1">
@@ -172,7 +207,7 @@ const Book = () => {
                         type="button" 
                         onClick={nextStep}
                         disabled={!serviceType}
-                        className="bg-teach-blue hover:bg-teach-blue-dark text-white"
+                        className={`bg-teach-blue hover:bg-teach-blue-dark text-white ${autoAdvance ? 'md:block hidden' : 'block'}`}
                       >
                         Continue
                       </Button>
@@ -245,7 +280,7 @@ const Book = () => {
                           <label htmlFor="preferredTime" className="block text-sm font-medium">
                             Preferred Time *
                           </label>
-                          <Select required>
+                          <Select required onValueChange={handleTimeChange}>
                             <SelectTrigger>
                               <SelectValue placeholder="Select time" />
                             </SelectTrigger>
