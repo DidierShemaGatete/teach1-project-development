@@ -33,8 +33,11 @@ const Contact = () => {
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
               <h1>We're Here to Help</h1>
-              <p className="text-xl text-teach-gray-light">
-                Feel free to reach out with any questions or to discuss your family's care needs.
+              <p className="text-xl text-teach-gray-light mb-2">
+                "Teaching Loved Ones to Care for Loved Ones"
+              </p>
+              <p className="text-lg text-teach-gray-light">
+                Families Taking Care of Families
               </p>
             </div>
           </div>
@@ -97,20 +100,24 @@ const Contact = () => {
                 <h2 className="text-teach-blue mb-6">Contact Information</h2>
                 <div className="bg-teach-gray-light p-6 rounded-lg mb-8">
                   <div className="space-y-6">
-                    <div className="flex">
-                      <MapPin size={24} className="text-teach-blue mr-4 flex-shrink-0" />
+                    <div className="flex items-start">
+                      <div className="bg-white p-3 rounded-lg mr-4">
+                        <span className="text-2xl font-serif font-bold">TEACH<span className="text-teach-orange">1</span></span>
+                      </div>
                       <div>
-                        <h4 className="font-bold mb-1">Office Address</h4>
-                        <p>123 Care Street, Suite 101<br />Anytown, ST 12345</p>
+                        <h4 className="font-bold mb-1">TEACH1 Homecare + Skill Consultant, LLC.</h4>
+                        <p className="text-teach-gray-dark">"Teaching Loved Ones to Care for Loved Ones"</p>
                       </div>
                     </div>
+                    
                     <div className="flex">
                       <Phone size={24} className="text-teach-blue mr-4 flex-shrink-0" />
                       <div>
                         <h4 className="font-bold mb-1">Phone</h4>
-                        <p><a href="tel:+15551234567" className="text-teach-blue hover:underline">+1 (555) 123-4567</a></p>
+                        <p><a href="tel:+13363274671" className="text-teach-blue hover:underline">336-327-4671</a></p>
                       </div>
                     </div>
+                    
                     <div className="flex">
                       <Mail size={24} className="text-teach-blue mr-4 flex-shrink-0" />
                       <div>
@@ -118,12 +125,19 @@ const Contact = () => {
                         <p><a href="mailto:info@teach1care.com" className="text-teach-blue hover:underline">info@teach1care.com</a></p>
                       </div>
                     </div>
-                    <div className="flex">
-                      <Clock size={24} className="text-teach-blue mr-4 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-bold mb-1">Office Hours</h4>
-                        <p>Monday - Friday: 9:00 AM - 5:00 PM<br />Saturday: 10:00 AM - 2:00 PM<br />Sunday: Closed</p>
-                      </div>
+                    
+                    <div className="border-t pt-4 mt-4">
+                      <h4 className="font-bold mb-3">Owner and Operator</h4>
+                      <p className="text-teach-orange font-medium text-lg">Stephanie Williams</p>
+                    </div>
+                    
+                    <div className="border-t pt-4">
+                      <h4 className="font-bold mb-2">Our Services</h4>
+                      <ul className="list-disc pl-5 space-y-1">
+                        <li>Basic In-Home Aide Skills</li>
+                        <li>Fall Prevention</li>
+                        <li>Infection Control</li>
+                      </ul>
                     </div>
                   </div>
                 </div>

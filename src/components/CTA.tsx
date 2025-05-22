@@ -8,7 +8,8 @@ const CTA = () => {
     <section className="section bg-gradient-to-r from-teach-orange-light via-teach-orange to-teach-orange-dark">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-teach-blue-dark mb-6">Ready to Begin Your Caregiving Journey?</h2>
+          <h2 className="text-teach-blue-dark mb-3">"Teaching Loved Ones to Care for Loved Ones"</h2>
+          <p className="text-teach-blue-dark font-medium mb-6">Families Taking Care of Families</p>
           <p className="text-lg mb-8 text-teach-blue-dark">
             Book a free consultation today and discover how TEACH1 can empower your family with professional caregiving skills.
           </p>
