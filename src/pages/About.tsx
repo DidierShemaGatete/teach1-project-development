@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CTA from '@/components/CTA';
+import MissionSection from '@/components/MissionSection';
 import { Check } from 'lucide-react';
 
 const About = () => {
@@ -16,38 +17,14 @@ const About = () => {
             <div className="max-w-3xl mx-auto text-center">
               <h1>About TEACH1</h1>
               <p className="text-xl text-teach-gray-light">
-                Empowering families with professional caregiving skills since 2020.
+                Homecare and Skills Consultant, LLC - Empowering families with professional caregiving skills since 2020.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Mission Section */}
-        <section className="section bg-white">
-          <div className="container-custom">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-teach-blue">Our Mission</h2>
-                <p className="mb-4">
-                  At <strong>TEACH1</strong>, our mission is simple yet profound: <em>"Teach loved ones to care for loved ones."</em>
-                </p>
-                <p className="mb-4">
-                  We believe that with the right knowledge and support, family members can be empowered to provide safe, dignified care to those they love — right at home.
-                </p>
-                <p>
-                  Our approach combines professional expertise with compassionate guidance, ensuring families feel confident and supported in their caregiving journey.
-                </p>
-              </div>
-              <div className="rounded-lg overflow-hidden shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                  alt="Caring hands"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Mission, Vision & Purpose Section */}
+        <MissionSection variant="about" />
 
         {/* Our Story Section */}
         <section className="section bg-teach-gray-light">
