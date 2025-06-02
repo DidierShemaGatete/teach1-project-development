@@ -9,6 +9,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import MissionSection from '@/components/MissionSection';
 import OwnerVideoSection from '@/components/OwnerVideoSection';
+import SavingsCalculator from '@/components/SavingsCalculator';
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
         <MissionSection variant="homepage" />
         <OwnerVideoSection />
         <Features />
+        <SavingsCalculator />
         <ServicesSection />
         <Testimonials />
         <CTA />
