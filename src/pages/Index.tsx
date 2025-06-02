@@ -9,7 +9,6 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import MissionSection from '@/components/MissionSection';
 import OwnerVideoSection from '@/components/OwnerVideoSection';
-import Healthcare3D from '@/components/Healthcare3D';
 
 const Index = () => {
   return (
@@ -17,7 +16,6 @@ const Index = () => {
       <Navigation />
       <main className="flex-grow">
         <Hero />
-        <Healthcare3D />
         <MissionSection variant="homepage" />
         <OwnerVideoSection />
         <Features />
