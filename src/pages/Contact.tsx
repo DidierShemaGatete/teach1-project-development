@@ -122,7 +122,7 @@ const Contact = () => {
                       <Mail size={24} className="text-teach-blue mr-4 flex-shrink-0" />
                       <div>
                         <h4 className="font-bold mb-1">Email</h4>
-                        <p><a href="mailto:info@teach1care.com" className="text-teach-blue hover:underline">info@teach1care.com</a></p>
+                        <p><a href="mailto:info@teach1care.com" className="text-teach-blue hover:underline">teachs1stephanie@gmail.com</a></p>
                       </div>
                     </div>
                     
