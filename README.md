@@ -1,18 +1,10 @@
-# Welcome to your Lovable project
+# Welcome to your TEACH1 PROJECT
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/c0485037-e0b5-40ab-8488-36f2353feccd
 
-## How can I edit this code?
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/c0485037-e0b5-40ab-8488-36f2353feccd) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
