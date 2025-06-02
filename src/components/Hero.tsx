@@ -28,8 +28,8 @@ const Hero = () => {
             <div className="relative rounded-lg overflow-hidden shadow-xl max-w-md w-full">
               <div className="aspect-w-16 aspect-h-9 bg-teach-blue-dark/20 flex items-center justify-center">
                 <img 
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                  alt="Caregiver teaching family member" 
+                  src="/lovable-uploads/ead24676-0ec5-4f9a-9a61-3b901cc12d61.png" 
+                  alt="Family caregiver assisting elderly loved one at home" 
                   className="w-full h-full object-cover"
                 />
               </div>

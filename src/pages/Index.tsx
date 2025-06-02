@@ -8,6 +8,7 @@ import CTA from '@/components/CTA';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import MissionSection from '@/components/MissionSection';
+import OwnerVideoSection from '@/components/OwnerVideoSection';
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         <MissionSection variant="homepage" />
+        <OwnerVideoSection />
         <Features />
         <ServicesSection />
         <Testimonials />
