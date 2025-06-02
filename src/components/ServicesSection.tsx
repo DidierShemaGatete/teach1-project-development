@@ -6,28 +6,28 @@ import { ArrowRight } from 'lucide-react';
 
 const services = [
   {
-    id: 'basic-skills',
-    title: 'Basic In-Home Aide Skills',
-    description: 'Learn core caregiving skills like hygiene support, meal assistance, repositioning, and more — designed for family caregivers.',
+    id: 'hands-on-skills',
+    title: 'Hands-On Basic In-Home Skills',
+    description: 'Learn essential caregiving techniques through practical, hands-on training and demonstrations.',
     icon: '🧠',
   },
   {
-    id: 'fall-prevention',
-    title: 'Fall Prevention Training',
-    description: 'We teach practical, effective methods to prevent dangerous falls, assess risks at home, and improve safety.',
+    id: 'preventive-care',
+    title: 'Preventive Care Training',
+    description: 'Comprehensive training on infection control and fall risk prevention to keep your loved ones safe.',
     icon: '🦺',
   },
   {
-    id: 'infection-control',
-    title: 'Infection Control Guidance',
-    description: 'Understand disinfection, PPE use, and hygiene protocols to keep your home safe from illness.',
-    icon: '🧼',
+    id: 'plan-of-care',
+    title: 'Plan of Care Development',
+    description: 'Create structured daily routines and care plans that promote independence and wellbeing.',
+    icon: '📋',
   },
   {
-    id: 'consultancy',
-    title: 'Caregiving Skills Consultancy',
-    description: 'One-on-one guidance or family-wide training to help you confidently provide quality care.',
-    icon: '📋',
+    id: 'cpr-certification',
+    title: 'CPR Certification',
+    description: 'Become certified in CPR and emergency response to be prepared for any situation.',
+    icon: '🚑',
   },
 ];
 
@@ -38,7 +38,7 @@ const ServicesSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-teach-blue">Our Services</h2>
           <p className="max-w-2xl mx-auto text-teach-gray-dark">
-            Professional training designed specifically for family caregivers, ranging from basic skills to specialized care.
+            Professional training designed specifically for family caregivers, from basic skills to specialized certification.
           </p>
         </div>
 
