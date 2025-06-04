@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Linkedin, Facebook, Instagram } from 'lucide-react';
@@ -68,11 +67,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-teach-blue-dark mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-center md:text-left">
-              © {currentYear} TEACH1 Homecare + Skill Consultant, LLC. All Rights Reserved.
-            </p>
-            
+          <div className="flex flex-col items-center space-y-4">
             {/* Social Media Links */}
             <div className="flex items-center space-x-4">
               <span className="text-sm font-medium">Follow Us:</span>
@@ -121,6 +116,11 @@ const Footer = () => {
                 </a>
               </div>
             </div>
+            
+            {/* Copyright */}
+            <p className="text-sm text-center">
+              © {currentYear} TEACH1 Homecare + Skill Consultant, LLC. All Rights Reserved.
+            </p>
           </div>
         </div>
       </div>
