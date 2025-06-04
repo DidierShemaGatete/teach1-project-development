@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Linkedin, Facebook, Instagram } from 'lucide-react';
@@ -76,40 +77,40 @@ const Footer = () => {
                   href="https://linkedin.com/company/teach1care" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-teach-orange transition-colors group"
+                  className="transition-transform hover:scale-110"
                 >
-                  <div className="bg-white/10 p-2 rounded-lg group-hover:bg-teach-orange/20 transition-colors">
-                    <Linkedin size={20} />
+                  <div className="bg-[#0077B5] p-2 rounded-lg">
+                    <Linkedin size={20} className="text-white" />
                   </div>
                 </a>
                 <a 
                   href="https://facebook.com/teach1care" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-teach-orange transition-colors group"
+                  className="transition-transform hover:scale-110"
                 >
-                  <div className="bg-white/10 p-2 rounded-lg group-hover:bg-teach-orange/20 transition-colors">
-                    <Facebook size={20} />
+                  <div className="bg-[#1877F2] p-2 rounded-lg">
+                    <Facebook size={20} className="text-white" />
                   </div>
                 </a>
                 <a 
                   href="https://instagram.com/teach1care" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-teach-orange transition-colors group"
+                  className="transition-transform hover:scale-110"
                 >
-                  <div className="bg-white/10 p-2 rounded-lg group-hover:bg-teach-orange/20 transition-colors">
-                    <Instagram size={20} />
+                  <div className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045] p-2 rounded-lg">
+                    <Instagram size={20} className="text-white" />
                   </div>
                 </a>
                 <a 
                   href="https://tiktok.com/@teach1care" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-teach-orange transition-colors group"
+                  className="transition-transform hover:scale-110"
                 >
-                  <div className="bg-white/10 p-2 rounded-lg group-hover:bg-teach-orange/20 transition-colors">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <div className="bg-black p-2 rounded-lg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.10z"/>
                     </svg>
                   </div>
