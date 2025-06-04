@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import CTA from '@/components/CTA';
 import MissionSection from '@/components/MissionSection';
 import Features from '@/components/Features';
+import Testimonials from '@/components/Testimonials';
 import { Check } from 'lucide-react';
 
 const About = () => {
@@ -29,6 +30,9 @@ const About = () => {
 
         {/* Why Choose TEACH1 Section */}
         <Features />
+
+        {/* Testimonials Section */}
+        <Testimonials />
 
         {/* Our Story Section */}
         <section className="section bg-teach-gray-light">
