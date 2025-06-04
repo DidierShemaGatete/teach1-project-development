@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Linkedin, Facebook, Instagram } from 'lucide-react';
@@ -73,7 +72,7 @@ const Footer = () => {
             {/* Social Media Links */}
             <div className="flex items-center space-x-4">
               <span className="text-sm font-medium">Follow Us:</span>
-              <div className="flex space-x-3">
+              <div className="flex space-x-4">
                 <a 
                   href="https://linkedin.com/company/teach1care" 
                   target="_blank" 
@@ -131,4 +130,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
