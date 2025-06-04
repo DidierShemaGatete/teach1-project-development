@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Info } from 'lucide-react';
 
 const CTA = () => {
   return (
@@ -10,6 +12,16 @@ const CTA = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-teach-blue-dark mb-3">"Teaching Loved Ones to Care for Loved Ones"</h2>
           <p className="text-teach-blue-dark font-medium mb-6">Families Taking Care of Families</p>
+          
+          {/* Important Notice */}
+          <div className="mb-6">
+            <Alert className="border-teach-blue bg-white/90 max-w-2xl mx-auto">
+              <Info className="h-5 w-5 text-teach-blue" />
+              <AlertDescription className="text-teach-blue-dark font-medium text-center">
+                <strong>Important Note:</strong> We are not a homecare company but offer private pay homecare referral services when needed.
+              </AlertDescription>
+            </Alert>
+          </div>
           
           <p className="text-lg mb-8 text-teach-blue-dark">
             Book a free consultation today and discover how TEACH1 can empower your family with professional caregiving skills.
