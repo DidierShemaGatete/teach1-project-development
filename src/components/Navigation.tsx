@@ -23,23 +23,23 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="nav-link font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
+            <Link to="/" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
               Home
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-teach-blue to-teach-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
-            <Link to="/about" className="nav-link font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
+            <Link to="/about" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
               About
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-teach-orange to-teach-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
-            <Link to="/services" className="nav-link font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
+            <Link to="/services" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
               Services
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-teach-blue to-teach-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
-            <Link to="/resources" className="nav-link font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
+            <Link to="/resources" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
               Resources
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-teach-orange to-teach-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
-            <Link to="/contact" className="nav-link font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
+            <Link to="/contact" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
               Contact
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-teach-blue to-teach-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>

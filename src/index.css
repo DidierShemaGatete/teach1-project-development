@@ -127,34 +127,4 @@
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
-
-  /* Creative navigation link styles */
-  .nav-link {
-    @apply relative overflow-hidden;
-    background: linear-gradient(90deg, transparent 50%, rgba(43, 108, 176, 0.1) 50%);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-    transition: all 0.3s ease;
-  }
-
-  .nav-link:hover {
-    background-position: 0 0;
-    text-shadow: 0 0 8px rgba(43, 108, 176, 0.3);
-    transform: translateY(-1px);
-  }
-
-  .nav-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(246, 173, 85, 0.2), transparent);
-    transition: left 0.5s ease;
-  }
-
-  .nav-link:hover::before {
-    left: 100%;
-  }
 }
