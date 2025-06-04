@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CTA from '@/components/CTA';
 import MissionSection from '@/components/MissionSection';
+import Features from '@/components/Features';
 import { Check } from 'lucide-react';
 
 const About = () => {
@@ -25,6 +26,9 @@ const About = () => {
 
         {/* Mission, Vision & Purpose Section */}
         <MissionSection variant="about" />
+
+        {/* Why Choose TEACH1 Section */}
+        <Features />
 
         {/* Our Story Section */}
         <section className="section bg-teach-gray-light">
