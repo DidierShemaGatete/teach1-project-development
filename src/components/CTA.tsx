@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -21,11 +22,11 @@ const CTA = () => {
           </div>
           
           <p className="text-lg mb-8 text-teach-blue-dark">
-            Book a free consultation today and discover how TEACH1 can empower your family with professional caregiving skills.
+            Book a consultation today and discover how TEACH1 can empower your family with professional caregiving skills.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild className="bg-teach-blue hover:bg-teach-blue-dark text-white px-8 py-6 text-lg">
-              <Link to="/book">Book a Free Consultation</Link>
+              <Link to="/book">Book a Consultation</Link>
             </Button>
             <Button asChild variant="outline" className="bg-transparent border-2 border-teach-blue text-teach-blue hover:bg-teach-blue hover:text-white px-8 py-6 text-lg">
               <Link to="/contact">Contact Us</Link>
