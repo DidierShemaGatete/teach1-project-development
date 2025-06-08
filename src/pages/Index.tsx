@@ -5,7 +5,6 @@ import CTA from '@/components/CTA';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import OwnerVideoSection from '@/components/OwnerVideoSection';
-import SavingsCalculator from '@/components/SavingsCalculator';
 
 const Index = () => {
   return (
@@ -14,7 +13,6 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         <OwnerVideoSection />
-        <SavingsCalculator />
         <CTA />
       </main>
       <Footer />
