@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Play } from 'lucide-react';
 
 const OwnerVideoSection = () => {
   return (
@@ -15,21 +14,17 @@ const OwnerVideoSection = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative bg-teach-gray-light rounded-lg overflow-hidden shadow-xl aspect-video">
-            {/* Placeholder for video - will be replaced with actual video */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-teach-blue-light to-teach-blue">
-              <div className="text-center text-white">
-                <div className="bg-white/20 rounded-full p-6 mb-4 inline-flex">
-                  <Play size={48} className="text-white ml-2" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Welcome Message from Stephanie</h3>
-                <p className="text-teach-gray-light">
-                  Learn about our mission to empower families with caregiving skills
-                </p>
-                <p className="text-sm mt-4 text-teach-gray-light">
-                  Video will be added here
-                </p>
-              </div>
-            </div>
+            <video 
+              className="w-full h-full object-cover"
+              controls
+              poster=""
+            >
+              <source 
+                src="https://www.shutterstock.com/shutterstock/videos/1108107271/preview/stock-footage-senior-woman-wheelchair-and-nurse-with-holding-hands-talk-and-listen-for-help-support-and-care.webm" 
+                type="video/webm" 
+              />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           <div className="mt-8 text-center">
