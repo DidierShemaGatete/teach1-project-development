@@ -17,8 +17,15 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-serif font-bold text-teach-blue">TEACH<span className="text-teach-orange">1</span></span>
-            <span className="ml-2 text-teach-gray-dark text-sm hidden sm:inline">Care Training</span>
+            <img 
+              src="/lovable-uploads/24f044f0-4a14-4eb5-90ab-0b84eee96bd6.png" 
+              alt="TEACH1 Care Logo" 
+              className="h-10 w-auto mr-3"
+            />
+            <div className="flex flex-col">
+              <span className="text-xl font-serif font-bold text-teach-blue">TEACH<span className="text-teach-orange">1</span></span>
+              <span className="text-teach-gray-dark text-xs hidden sm:inline">Care Training</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
