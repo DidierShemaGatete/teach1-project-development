@@ -42,8 +42,8 @@ const Navigation = () => {
               Services
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-teach-blue to-teach-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
-            <Link to="/resources" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
-              Resources
+            <Link to="/our-purpose" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
+              Our Purpose
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-teach-orange to-teach-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
             <Link to="/contact" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 relative group">
@@ -76,7 +76,7 @@ const Navigation = () => {
             <Link to="/" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 py-2 px-4 rounded-lg hover:bg-teach-blue/10 transform hover:translate-x-2" onClick={toggleMenu}>Home</Link>
             <Link to="/about" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 py-2 px-4 rounded-lg hover:bg-teach-blue/10 transform hover:translate-x-2" onClick={toggleMenu}>About</Link>
             <Link to="/services" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 py-2 px-4 rounded-lg hover:bg-teach-blue/10 transform hover:translate-x-2" onClick={toggleMenu}>Services</Link>
-            <Link to="/resources" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 py-2 px-4 rounded-lg hover:bg-teach-blue/10 transform hover:translate-x-2" onClick={toggleMenu}>Resources</Link>
+            <Link to="/our-purpose" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 py-2 px-4 rounded-lg hover:bg-teach-blue/10 transform hover:translate-x-2" onClick={toggleMenu}>Our Purpose</Link>
             <Link to="/contact" className="font-bold text-teach-gray-dark hover:text-teach-blue transition-all duration-300 py-2 px-4 rounded-lg hover:bg-teach-blue/10 transform hover:translate-x-2" onClick={toggleMenu}>Contact</Link>
             <Button asChild className="bg-gradient-to-r from-teach-blue to-teach-blue-dark hover:from-teach-blue-dark hover:to-teach-blue text-white font-bold w-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               <Link to="/book" onClick={toggleMenu}>Book a Consultation</Link>

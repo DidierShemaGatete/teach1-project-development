@@ -6,7 +6,6 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import OwnerVideoSection from '@/components/OwnerVideoSection';
 import CPRCertificationSection from '@/components/CPRCertificationSection';
-import OurPurposeSection from '@/components/OurPurposeSection';
 
 const Index = () => {
   return (
@@ -14,7 +13,6 @@ const Index = () => {
       <Navigation />
       <main className="flex-grow">
         <Hero />
-        <OurPurposeSection />
         <OwnerVideoSection />
         <CPRCertificationSection />
         <CTA />
