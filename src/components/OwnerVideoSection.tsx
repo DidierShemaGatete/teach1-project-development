@@ -23,7 +23,7 @@ const OwnerVideoSection = () => {
               poster=""
             >
               <source 
-                src="https://www.shutterstock.com/shutterstock/videos/1108107271/preview/stock-footage-senior-woman-wheelchair-and-nurse-with-holding-hands-talk-and-listen-for-help-support-and-care.webm" 
+                src="https://www.shutterstock.com/shutterstock/videos/3765098445/preview/stock-footage-people-writing-or-dummy-for-first-aid-training-for-rescue-safety-demonstration-lesson-or.webm" 
                 type="video/webm" 
               />
               Your browser does not support the video tag.
