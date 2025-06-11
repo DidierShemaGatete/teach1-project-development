@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -137,6 +136,7 @@ const Contact = () => {
                         <li>Basic In-Home Aide Skills</li>
                         <li>Fall Prevention</li>
                         <li>Infection Control</li>
+                        <li>CPR Certification</li>
                       </ul>
                     </div>
                   </div>

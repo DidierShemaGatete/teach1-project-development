@@ -45,6 +45,9 @@ const mainServices = [
       'Medication management routines',
       'Activity planning and engagement',
       'Health monitoring schedules',
+      'Vital signs',
+      'Catheter care',
+      'Hoyer lift',
       'Emergency response planning',
       'Adapting routines to changing needs'
     ]
