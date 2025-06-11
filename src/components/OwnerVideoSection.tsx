@@ -16,7 +16,10 @@ const OwnerVideoSection = () => {
           <div className="relative bg-teach-gray-light rounded-lg overflow-hidden shadow-xl aspect-video">
             <video 
               className="w-full h-full object-cover"
-              controls
+              autoPlay
+              loop
+              muted
+              playsInline
               poster=""
             >
               <source 
