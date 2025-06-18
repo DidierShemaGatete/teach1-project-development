@@ -1,4 +1,3 @@
-
 export const mainServices = [
   {
     id: 'hands-on-skills',
@@ -33,7 +32,7 @@ export const mainServices = [
     id: 'plan-of-care',
     title: 'Plan of Care (Daily Routine)',
     description: 'Develop structured, personalized daily care routines that promote independence and wellbeing.',
-    image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+    image: '/lovable-uploads/e6dd7d9f-8d80-4e44-8515-8555bf52fae0.png',
     features: [
       'Creating structured daily schedules',
       'Medication management routines',
