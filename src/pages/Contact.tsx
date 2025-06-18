@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Fax } from 'lucide-react';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -113,8 +113,24 @@ const Contact = () => {
                     <div className="flex">
                       <Phone size={24} className="text-teach-blue mr-4 flex-shrink-0" />
                       <div>
-                        <h4 className="font-bold mb-1">Phone</h4>
+                        <h4 className="font-bold mb-1">Primary Phone</h4>
+                        <p><a href="tel:+19193358852" className="text-teach-blue hover:underline">919-335-8852</a></p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex">
+                      <Phone size={24} className="text-teach-blue mr-4 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-bold mb-1">Secondary Phone</h4>
                         <p><a href="tel:+13363274671" className="text-teach-blue hover:underline">336-327-4671</a></p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex">
+                      <Fax size={24} className="text-teach-blue mr-4 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-bold mb-1">Fax</h4>
+                        <p className="text-teach-gray-dark">919-249-6315</p>
                       </div>
                     </div>
                     
