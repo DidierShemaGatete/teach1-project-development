@@ -1,11 +1,10 @@
-
 export const mainServices = [
   {
     id: 'hands-on-skills',
     title: 'Hands-On Basic In-Home Skills and Demonstrations',
     description: 'We provide in-home demonstrations of essential life skills — from basic cooking to cleaning routines and laundry — empowering clients with confidence through hands-on learning.',
     image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-    video: 'https://www.shutterstock.com/video/clip-3759132127-female-doctor-looking-her-x-ray-scan-tired',
+    video: 'https://www.shutterstock.com/shutterstock/videos/3765098445/preview/stock-footage-people-writing-or-dummy-for-first-aid-training-for-rescue-safety-demonstration-lesson-or.webm',
     features: [
       'Personal hygiene and bathing assistance',
       'Safe transfer techniques',
