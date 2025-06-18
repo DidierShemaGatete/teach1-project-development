@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -6,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin, Clock, Fax } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Printer } from 'lucide-react';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -127,7 +126,7 @@ const Contact = () => {
                     </div>
                     
                     <div className="flex">
-                      <Fax size={24} className="text-teach-blue mr-4 flex-shrink-0" />
+                      <Printer size={24} className="text-teach-blue mr-4 flex-shrink-0" />
                       <div>
                         <h4 className="font-bold mb-1">Fax</h4>
                         <p className="text-teach-gray-dark">919-249-6315</p>
