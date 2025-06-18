@@ -10,8 +10,9 @@ const mainServices = [
   {
     id: 'hands-on-skills',
     title: 'Hands-On Basic In-Home Skills and Demonstrations',
-    description: 'Learn essential caregiving techniques through practical, hands-on training designed for family caregivers.',
+    description: 'We provide in-home demonstrations of essential life skills — from basic cooking to cleaning routines and laundry — empowering clients with confidence through hands-on learning.',
     image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+    video: 'https://www.shutterstock.com/shutterstock/videos/3477394851/preview/stock-footage-folding-clothes-on-the-table-hands-folding-a-purple-t-shirt.webm',
     features: [
       'Personal hygiene and bathing assistance',
       'Safe transfer techniques',
@@ -54,9 +55,13 @@ const mainServices = [
   },
   {
     id: 'home-management',
-    title: 'Home Management (Declutter)',
-    description: 'Learn to create a safe, organized, and accessible home environment for optimal caregiving.',
+    title: 'Declutter & Clutter Management',
+    description: 'Our decluttering service transforms chaotic spaces into clean, calm environments. See the difference a structured system and practical help can make in your daily life.',
     image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+    beforeAfterImages: {
+      before: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      after: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+    },
     features: [
       'Home safety and accessibility assessment',
       'Decluttering strategies for safer navigation',
@@ -97,15 +102,10 @@ const mainServices = [
   {
     id: 'private-homecare-referral',
     title: 'Private Homecare Referral Services',
-    description: 'Connect with trusted, vetted private homecare professionals when additional support is needed. (We are not a homecare company)',
+    description: 'We offer compassionate private homecare referral guidance tailored to each family\'s situation. (We are not a homecare company)',
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
     features: [
-      'Vetted caregiver referral network',
-      'Matching caregivers to specific needs',
-      'Background check verification assistance',
-      'Interview guidance and support',
-      'Care agreement facilitation',
-      'Ongoing quality assurance support'
+      'Vetted caregiver referral network'
     ]
   },
   {
@@ -211,11 +211,49 @@ const Services = () => {
                   </Button>
                 </div>
                 <div className={`${index % 2 !== 0 ? 'order-1 md:order-2' : ''} rounded-lg overflow-hidden shadow-xl`}>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                  />
+                  {service.id === 'hands-on-skills' && service.video ? (
+                    <div className="relative bg-teach-gray-light rounded-lg overflow-hidden shadow-xl aspect-video">
+                      <video 
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        poster=""
+                      >
+                        <source 
+                          src={service.video} 
+                          type="video/webm" 
+                        />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  ) : service.id === 'home-management' && service.beforeAfterImages ? (
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="text-sm font-semibold mb-2 text-center">Before</h4>
+                        <img
+                          src={service.beforeAfterImages.before}
+                          alt="Cluttered space before"
+                          className="w-full h-48 object-cover rounded-lg"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold mb-2 text-center">After</h4>
+                        <img
+                          src={service.beforeAfterImages.after}
+                          alt="Organized space after"
+                          className="w-full h-48 object-cover rounded-lg"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                 </div>
               </div>
             </div>
