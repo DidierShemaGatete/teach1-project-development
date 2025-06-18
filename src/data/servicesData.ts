@@ -2,8 +2,8 @@
 export const mainServices = [
   {
     id: 'hands-on-skills',
-    title: 'Hands-On Basic In-Home Skills and Demonstrations',
-    description: 'We provide in-home demonstrations of essential life skills — from basic cooking to cleaning routines and laundry — empowering clients with confidence through hands-on learning.',
+    title: 'Hands-On In-Home Skills',
+    description: 'We provide patient, step-by-step demonstrations of essential in-home skills. From folding laundry and cleaning surfaces to simple cooking and organizing daily routines, we guide individuals in mastering daily living tasks in a supportive, empowering environment.',
     image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
     video: 'https://www.shutterstock.com/shutterstock/videos/3765098445/preview/stock-footage-people-writing-or-dummy-for-first-aid-training-for-rescue-safety-demonstration-lesson-or.webm',
     features: [
@@ -49,7 +49,7 @@ export const mainServices = [
   {
     id: 'home-management',
     title: 'Declutter & Clutter Management',
-    description: 'Our decluttering service transforms chaotic spaces into clean, calm environments. See the difference a structured system and practical help can make in your daily life.',
+    description: 'A cluttered space can cause unnecessary stress. Our personalized decluttering services bring calm and order to your home. We\'ll help you sort, remove, and reorganize belongings for a fresh, open environment. See the difference for yourself – before and after each transformation.',
     image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
     beforeAfterImages: {
       before: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
@@ -95,7 +95,7 @@ export const mainServices = [
   {
     id: 'private-homecare-referral',
     title: 'Private Homecare Referral Services',
-    description: 'We offer compassionate private homecare referral guidance tailored to each family\'s situation. (We are not a homecare company)',
+    description: 'We offer thoughtful and compassionate homecare referral guidance, helping families connect with trusted professionals to support their loved ones with dignity and care.',
     image: 'https://images.unsplash.com/photo-1607013251379-e6eecfffe234?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
     features: [
       'Vetted caregiver referral network'
