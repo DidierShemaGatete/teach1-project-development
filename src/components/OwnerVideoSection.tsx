@@ -3,41 +3,24 @@ import React from 'react';
 
 const OwnerVideoSection = () => {
   return (
-    <section className="section bg-white">
+    <section className="section bg-teach-gray-light">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-teach-blue">Meet Stephanie Williams</h2>
-          <p className="max-w-2xl mx-auto text-teach-gray-dark">
-            Hear directly from our founder about how TEACH1 can help your family provide compassionate, confident care at home.
+          <h2 className="text-teach-blue mb-4">Meet Our Founder</h2>
+          <p className="text-lg text-teach-gray-dark max-w-3xl mx-auto">
+            Learn about our mission and approach to empowering families with professional caregiving skills.
           </p>
         </div>
-
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-teach-gray-light rounded-lg overflow-hidden shadow-xl aspect-video">
-            <video 
-              className="w-full h-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster=""
-            >
-              <source 
-                src="https://www.shutterstock.com/shutterstock/videos/3765098445/preview/stock-footage-people-writing-or-dummy-for-first-aid-training-for-rescue-safety-demonstration-lesson-or.webm" 
-                type="video/webm" 
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <div className="mt-8 text-center">
-            <div className="bg-teach-gray-light p-6 rounded-lg">
-              <h4 className="font-bold text-lg mb-2">Stephanie Williams</h4>
-              <p className="text-teach-gray-dark mb-2">Owner and Operator</p>
-              <p className="text-sm text-teach-gray-dark">
-                "Teaching Loved Ones to Care for Loved Ones" — with over years of experience in homecare training and family support.
-              </p>
-            </div>
+          <div className="relative aspect-video bg-white rounded-lg shadow-xl overflow-hidden">
+            <iframe
+              src="https://www.youtube.com/embed/h7jybVgBiVM"
+              title="TEACH1 Care - Meet Our Founder"
+              className="w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
         </div>
       </div>
