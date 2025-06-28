@@ -13,14 +13,17 @@ const OwnerVideoSection = () => {
         </div>
         <div className="max-w-4xl mx-auto">
           <div className="relative aspect-video bg-white rounded-lg shadow-xl overflow-hidden">
-            <iframe
-              src="https://www.youtube.com/embed/h7jybVgBiVM?autoplay=1&loop=1&playlist=h7jybVgBiVM&controls=0&showinfo=0&rel=0&modestbranding=1&mute=0&enablejsapi=1&origin=window.location.origin"
-              title="TEACH1 Care - Meet Our Founder"
-              className="w-full h-full"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls={false}
+            >
+              <source src="/att.Ec1aGWHoNV1i52swG_F8KXJshzLZPg7MjoSf_gOYEmg.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
