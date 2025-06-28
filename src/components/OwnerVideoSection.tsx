@@ -12,19 +12,35 @@ const OwnerVideoSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            video.play().catch(console.error);
+            // For mobile, we need to ensure the video can play
+            video.play().catch((error) => {
+              console.log('Video play failed:', error);
+              // If autoplay fails, user will need to click play button
+            });
           } else {
             video.pause();
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 } // Lower threshold for better mobile experience
     );
 
     observer.observe(video);
 
+    // Handle user interaction to enable sound
+    const handleUserInteraction = () => {
+      if (video.muted) {
+        video.muted = false;
+      }
+    };
+
+    video.addEventListener('click', handleUserInteraction);
+    video.addEventListener('touchstart', handleUserInteraction);
+
     return () => {
       observer.disconnect();
+      video.removeEventListener('click', handleUserInteraction);
+      video.removeEventListener('touchstart', handleUserInteraction);
     };
   }, []);
 
@@ -46,6 +62,7 @@ const OwnerVideoSection = () => {
               playsInline
               muted
               controls
+              preload="metadata"
             >
               <source src="/att.Ec1aGWHoNV1i52swG_F8KXJshzLZPg7MjoSf_gOYEmg.mp4" type="video/mp4" />
               Your browser does not support the video tag.
