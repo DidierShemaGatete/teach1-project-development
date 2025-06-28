@@ -17,9 +17,8 @@ const OwnerVideoSection = () => {
               className="w-full h-full object-cover"
               autoPlay
               loop
-              muted
               playsInline
-              controls={false}
+              controls
             >
               <source src="/att.Ec1aGWHoNV1i52swG_F8KXJshzLZPg7MjoSf_gOYEmg.mp4" type="video/mp4" />
               Your browser does not support the video tag.
