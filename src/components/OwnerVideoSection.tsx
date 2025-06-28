@@ -14,7 +14,7 @@ const OwnerVideoSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="relative aspect-video bg-white rounded-lg shadow-xl overflow-hidden">
             <video
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               autoPlay
               loop
               playsInline
