@@ -14,13 +14,33 @@ const About = () => {
       <Navigation />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-teach-blue text-white py-16">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1>About TEACH1</h1>
-              <p className="text-xl text-teach-gray-light">
-                Homecare and Skills Consultant, LLC - Empowering families with professional caregiving skills since 2020.
-              </p>
+        <section className="relative bg-gradient-to-r from-teach-blue to-teach-blue-dark text-white py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="container-custom relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <h1 className="text-4xl lg:text-5xl font-bold mb-6">About TEACH1</h1>
+                <p className="text-xl text-teach-gray-light mb-4">
+                  Homecare and Skills Consultant, LLC
+                </p>
+                <p className="text-lg text-teach-gray-light mb-6">
+                  Empowering families with professional caregiving skills since 2020.
+                </p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                  <h3 className="text-teach-orange font-semibold text-xl mb-2">Stephanie Williams</h3>
+                  <p className="text-white/90">Founder & Certified Home Care Professional</p>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-teach-orange/30 to-transparent rounded-2xl transform rotate-3"></div>
+                  <img 
+                    src="/lovable-uploads/17ee8217-da62-4487-a81e-ccbbed3ebebc.png" 
+                    alt="Stephanie Williams - Founder of TEACH1" 
+                    className="relative w-80 h-96 object-cover rounded-2xl shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
