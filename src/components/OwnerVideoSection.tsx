@@ -44,7 +44,7 @@ const OwnerVideoSection = () => {
             <iframe
               ref={iframeRef}
               className="w-full h-full"
-              src="https://www.youtube.com/embed/CBcG9cUx1m8?enablejsapi=1&loop=1&playlist=CBcG9cUx1m8"
+              src="https://www.youtube.com/embed/euZu_GaHjtA?enablejsapi=1&loop=1&playlist=euZu_GaHjtA"
               title="Meet Our Founder"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
