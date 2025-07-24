@@ -27,17 +27,34 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="bg-teach-blue text-white py-16">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1>We're Here to Help</h1>
-              <p className="text-xl text-teach-gray-light mb-2">
-                "Teaching Loved Ones to Care for Loved Ones"
-              </p>
-              <p className="text-lg text-teach-gray-light">
-                Families Taking Care of Families
-              </p>
+        {/* Hero Section with Photo */}
+        <section className="relative bg-gradient-to-r from-teach-blue to-teach-blue-dark text-white py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="container-custom relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <h1 className="text-4xl lg:text-5xl font-bold mb-6">We're Here to Help</h1>
+                <p className="text-xl text-teach-gray-light mb-4">
+                  "Teaching Loved Ones to Care for Loved Ones"
+                </p>
+                <p className="text-lg text-teach-gray-light mb-6">
+                  Families Taking Care of Families
+                </p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                  <h3 className="text-teach-orange font-semibold text-xl mb-2">Stephanie Williams</h3>
+                  <p className="text-white/90">Owner and Operator</p>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-teach-orange/30 to-transparent rounded-2xl transform rotate-3"></div>
+                  <img 
+                    src="/lovable-uploads/f0e3b636-f429-40e2-afb4-b29eb080c4c2.png" 
+                    alt="Stephanie Williams - Owner and Operator" 
+                    className="relative w-80 h-96 object-cover rounded-2xl shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -133,17 +150,6 @@ const Contact = () => {
                       </div>
                     </div>
                     
-                    <div className="border-t pt-4 mt-4">
-                      <h4 className="font-bold mb-3">Owner and Operator</h4>
-                      <div className="flex items-center space-x-4">
-                        <img 
-                          src="/lovable-uploads/f0e3b636-f429-40e2-afb4-b29eb080c4c2.png" 
-                          alt="Stephanie Williams - Owner and Operator" 
-                          className="w-16 h-16 rounded-full object-cover"
-                        />
-                        <p className="text-teach-orange font-medium text-lg">Stephanie Williams</p>
-                      </div>
-                    </div>
                     
                     <div className="border-t pt-4">
                       <h4 className="font-bold mb-2">Our Services</h4>
