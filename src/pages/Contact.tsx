@@ -135,7 +135,14 @@ const Contact = () => {
                     
                     <div className="border-t pt-4 mt-4">
                       <h4 className="font-bold mb-3">Owner and Operator</h4>
-                      <p className="text-teach-orange font-medium text-lg">Stephanie Williams</p>
+                      <div className="flex items-center space-x-4">
+                        <img 
+                          src="/lovable-uploads/f0e3b636-f429-40e2-afb4-b29eb080c4c2.png" 
+                          alt="Stephanie Williams - Owner and Operator" 
+                          className="w-16 h-16 rounded-full object-cover"
+                        />
+                        <p className="text-teach-orange font-medium text-lg">Stephanie Williams</p>
+                      </div>
                     </div>
                     
                     <div className="border-t pt-4">
