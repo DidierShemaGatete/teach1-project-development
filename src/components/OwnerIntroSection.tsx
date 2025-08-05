@@ -12,7 +12,7 @@ const OwnerIntroSection = () => {
               <img
                 src="/lovable-uploads/42dd1545-d780-4cac-8d83-25717d2cb15b.png"
                 alt="Stephanie Williams - Owner and Operator of Teach1"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-contain object-center bg-teach-blue-dark/20"
               />
             </div>
             {/* Decorative elements */}
