@@ -26,12 +26,13 @@ const Services = () => {
           </div>
         </section>
 
+        <OwnerVideoSection />
+
         {/* Main Services */}
         {mainServices.map((service, index) => (
           <ServiceCard key={service.id} service={service} index={index} />
         ))}
 
-        <OwnerVideoSection />
         <OngoingSupportSection />
         <ConsultationOptionsSection />
         <CTA />
