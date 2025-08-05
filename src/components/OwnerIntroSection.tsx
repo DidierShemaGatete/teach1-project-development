@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const OwnerIntroSection = () => {
   return (
@@ -53,9 +54,12 @@ const OwnerIntroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button className="px-8 py-4 bg-teach-orange hover:bg-teach-orange-dark text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105">
+            <Link 
+              to="/services"
+              className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105 text-center"
+            >
               Learn More About Our Services
-            </button>
+            </Link>
             <button className="px-8 py-4 border-2 border-white/30 hover:border-white/50 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-white/10">
               Get In Touch
             </button>
