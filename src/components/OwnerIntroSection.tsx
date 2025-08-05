@@ -21,7 +21,7 @@ const OwnerIntroSection = () => {
         {/* Profile Picture Section */}
         <div className="w-full lg:w-1/2 flex justify-center">
           <div className="relative">
-            <div className="w-[450px] h-[450px] lg:w-[550px] lg:h-[550px] xl:w-[650px] xl:h-[650px] relative">
+            <div className="w-80 h-80 lg:w-96 lg:h-96 xl:w-[450px] xl:h-[450px] relative max-w-full">
               {/* Main image container with designed edges */}
               <div className="w-full h-full relative">
                 <img
