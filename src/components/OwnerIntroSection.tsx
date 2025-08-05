@@ -21,12 +21,17 @@ const OwnerIntroSection = () => {
         {/* Profile Picture Section */}
         <div className="w-full lg:w-1/2 flex justify-center">
           <div className="relative">
-            <div className="w-80 h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="/lovable-uploads/42dd1545-d780-4cac-8d83-25717d2cb15b.png"
-                alt="Stephanie Williams - Owner and Operator of Teach1"
-                className="w-full h-full object-contain object-center bg-red-600/20"
-              />
+            <div className="w-96 h-96 lg:w-[500px] lg:h-[500px] xl:w-[600px] xl:h-[600px] relative">
+              <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-gradient-to-br from-white/10 to-transparent backdrop-blur-sm">
+                <img
+                  src="/lovable-uploads/42dd1545-d780-4cac-8d83-25717d2cb15b.png"
+                  alt="Stephanie Williams - Owner and Operator of Teach1"
+                  className="w-full h-full object-contain object-center"
+                />
+              </div>
+              {/* Decorative border accents */}
+              <div className="absolute -inset-2 rounded-3xl border border-red-600/30"></div>
+              <div className="absolute -inset-4 rounded-3xl border border-white/10"></div>
             </div>
             {/* Decorative elements */}
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-teach-orange/20 rounded-full blur-xl"></div>
