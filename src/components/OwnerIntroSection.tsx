@@ -48,7 +48,7 @@ const OwnerIntroSection = () => {
               </p>
             </div>
             
-            <div className="w-16 h-1 bg-teach-orange rounded-full"></div>
+            <div className="w-16 h-1 bg-red-600 rounded-full"></div>
           </div>
 
           <div className="space-y-6 text-base md:text-lg leading-relaxed max-w-2xl">
