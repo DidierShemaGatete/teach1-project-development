@@ -10,7 +10,8 @@ const OwnerIntroSection = () => {
         backgroundImage: `url('/lovable-uploads/42dd1545-d780-4cac-8d83-25717d2cb15b.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh'
       }}
     >
       {/* Overlay for text readability */}
