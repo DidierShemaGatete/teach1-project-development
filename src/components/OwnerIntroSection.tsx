@@ -37,7 +37,7 @@ const OwnerIntroSection = () => {
         <div className="w-full lg:w-1/2 text-white space-y-8">
           <div className="space-y-6">
             <div className="space-y-2">
-              <div className="inline-block px-4 py-2 bg-teach-orange rounded-full text-sm font-medium text-white">
+              <div className="inline-block px-4 py-2 bg-red-600 rounded-full text-sm font-medium text-white">
                 Meet Our Founder
               </div>
               <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">
