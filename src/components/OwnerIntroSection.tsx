@@ -27,7 +27,7 @@ const OwnerIntroSection = () => {
                 <img
                   src="/lovable-uploads/42dd1545-d780-4cac-8d83-25717d2cb15b.png"
                   alt="Stephanie Williams - Owner and Operator of Teach1"
-                  className="w-full h-full object-cover object-center rounded-3xl shadow-2xl border-4 border-white/30"
+                  className="w-full h-full object-contain object-center rounded-3xl shadow-2xl border-4 border-white/30"
                   style={{
                     filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.3))'
                   }}
