@@ -6,6 +6,7 @@ import CTA from '@/components/CTA';
 import ServiceCard from '@/components/ServiceCard';
 import OngoingSupportSection from '@/components/OngoingSupportSection';
 import ConsultationOptionsSection from '@/components/ConsultationOptionsSection';
+import OwnerVideoSection from '@/components/OwnerVideoSection';
 import { mainServices } from '@/data/servicesData';
 
 const Services = () => {
@@ -30,6 +31,7 @@ const Services = () => {
           <ServiceCard key={service.id} service={service} index={index} />
         ))}
 
+        <OwnerVideoSection />
         <OngoingSupportSection />
         <ConsultationOptionsSection />
         <CTA />

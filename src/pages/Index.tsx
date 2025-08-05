@@ -4,7 +4,7 @@ import Hero from '@/components/Hero';
 import CTA from '@/components/CTA';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import OwnerVideoSection from '@/components/OwnerVideoSection';
+
 import CPRCertificationSection from '@/components/CPRCertificationSection';
 
 const Index = () => {
@@ -13,7 +13,6 @@ const Index = () => {
       <Navigation />
       <main className="flex-grow">
         <Hero />
-        <OwnerVideoSection />
         <CPRCertificationSection />
         <CTA />
       </main>
