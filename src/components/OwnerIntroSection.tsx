@@ -2,15 +2,15 @@ import React from 'react';
 
 const OwnerIntroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-teach-blue">
       {/* Full-screen background image */}
       <div className="absolute inset-0">
         <img
           src="/lovable-uploads/42dd1545-d780-4cac-8d83-25717d2cb15b.png"
           alt="Stephanie Williams - Owner and Operator of Teach1"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-contain"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-teach-blue/80 via-teach-blue/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-teach-blue/40 via-transparent to-teach-blue/40"></div>
       </div>
       
       {/* Content overlay */}
