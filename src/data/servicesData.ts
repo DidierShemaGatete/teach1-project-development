@@ -63,7 +63,7 @@ export const mainServices = [
     id: 'work-with-caregiver',
     title: 'Work with Pre-existing Caregiver',
     description: 'Collaborate and coordinate with existing caregivers to ensure consistent, quality care.',
-    image: '/lovable-uploads/0dc12f79-0041-4023-a342-5cd9a45b95c2.png',
+    image: '/lovable-uploads/216039ee-0c51-40ff-a50a-ddfc297647ed.png',
     features: [
       'Communication strategies with professional caregivers',
       'Care plan coordination and updates',
