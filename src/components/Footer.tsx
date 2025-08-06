@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Linkedin, Facebook, Youtube } from 'lucide-react';
+import { Mail, Phone, Linkedin, Facebook, Youtube, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -120,6 +120,28 @@ const Footer = () => {
                 >
                   <div className="bg-[#FF0000] p-1.5 rounded-lg">
                     <Youtube size={16} className="text-white" />
+                  </div>
+                </a>
+                <a 
+                  href="#" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="transition-transform hover:scale-110"
+                >
+                  <div className="bg-[#E4405F] p-1.5 rounded-lg">
+                    <Instagram size={16} className="text-white" />
+                  </div>
+                </a>
+                <a 
+                  href="#" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="transition-transform hover:scale-110"
+                >
+                  <div className="bg-[#000000] p-1.5 rounded-lg">
+                    <svg className="text-white w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43V7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.43z"/>
+                    </svg>
                   </div>
                 </a>
               </div>
