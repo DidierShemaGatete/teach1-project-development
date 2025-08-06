@@ -51,7 +51,7 @@ const About = () => {
             <div className="text-center mb-8">
               <h2 className="text-teach-blue">Meet Our Founder & Services</h2>
               <p className="text-teach-gray-dark max-w-2xl mx-auto">
-                Get to know Stephanie Williams and discover the comprehensive range of services TEACH1 offers to families in the Triad and surrounding areas.
+                Get to know Stephanie Williams and discover the comprehensive range of services TEACH1 offers to families across 10 counties: Guilford, Forsyth, Randolph, Stokes, Alamance, Rockingham, Harnett, Lee, Cumberland & Wake.
               </p>
             </div>
             <div className="flex justify-center">

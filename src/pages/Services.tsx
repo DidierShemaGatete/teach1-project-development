@@ -19,9 +19,13 @@ const Services = () => {
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
               <h1>Our Services</h1>
-              <p className="text-xl text-teach-gray-light">
+              <p className="text-xl text-teach-gray-light mb-6">
                 Professional caregiving training and support designed for families.
               </p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 inline-block">
+                <p className="text-sm text-teach-orange font-semibold mb-1">Service Areas</p>
+                <p className="text-sm">Guilford • Forsyth • Randolph • Stokes • Alamance • Rockingham • Harnett • Lee • Cumberland • Wake</p>
+              </div>
             </div>
           </div>
         </section>

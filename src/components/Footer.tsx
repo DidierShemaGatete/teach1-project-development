@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="bg-teach-blue text-white">
       <div className="container-custom py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
           {/* Logo and About */}
           <div className="md:col-span-1">
             <div className="flex items-center mb-3">
@@ -35,6 +35,24 @@ const Footer = () => {
               <li><Link to="/contact" className="hover:text-teach-orange transition-colors">Contact Us</Link></li>
               <li><Link to="/terms-and-conditions" className="hover:text-teach-orange transition-colors">Terms & Conditions</Link></li>
             </ul>
+          </div>
+
+          {/* Service Areas */}
+          <div className="md:col-span-1">
+            <h4 className="font-bold text-xl mb-3 font-serif">Service Areas</h4>
+            <p className="text-sm text-teach-gray-light mb-2">We serve these counties:</p>
+            <div className="grid grid-cols-2 gap-1 text-sm">
+              <span>Guilford</span>
+              <span>Forsyth</span>
+              <span>Randolph</span>
+              <span>Stokes</span>
+              <span>Alamance</span>
+              <span>Rockingham</span>
+              <span>Harnett</span>
+              <span>Lee</span>
+              <span>Cumberland</span>
+              <span>Wake</span>
+            </div>
           </div>
 
           {/* Services */}

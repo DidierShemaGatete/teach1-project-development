@@ -151,6 +151,26 @@ const Contact = () => {
                     </div>
                     
                     
+                    <div className="flex">
+                      <MapPin size={24} className="text-teach-blue mr-4 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-bold mb-1">Service Areas</h4>
+                        <p className="text-sm text-teach-gray-dark mb-2">We proudly serve the following counties:</p>
+                        <div className="grid grid-cols-2 gap-1 text-sm">
+                          <span>• Guilford</span>
+                          <span>• Forsyth</span>
+                          <span>• Randolph</span>
+                          <span>• Stokes</span>
+                          <span>• Alamance</span>
+                          <span>• Rockingham</span>
+                          <span>• Harnett</span>
+                          <span>• Lee</span>
+                          <span>• Cumberland</span>
+                          <span>• Wake</span>
+                        </div>
+                      </div>
+                    </div>
+                    
                     <div className="border-t pt-4">
                       <h4 className="font-bold mb-2">Our Services</h4>
                       <ul className="list-disc pl-5 space-y-1">

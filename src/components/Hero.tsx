@@ -21,6 +21,9 @@ const Hero = () => {
             <p className="text-lg md:text-xl mb-8 text-gray-100">
               At TEACH1, we teach loved ones to care for loved ones — with professional in-home aide skills, training, and compassionate consultancy.
             </p>
+            <p className="text-sm md:text-base mb-8 text-gray-200">
+              Serving Guilford, Forsyth, Randolph, Stokes, Alamance, Rockingham, Harnett, Lee, Cumberland & Wake Counties
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild className="bg-teach-orange hover:bg-teach-orange-dark text-teach-blue-dark">
                 <Link to="/book">Book a Consultation</Link>
