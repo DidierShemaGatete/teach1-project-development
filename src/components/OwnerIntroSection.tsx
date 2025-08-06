@@ -77,9 +77,12 @@ const OwnerIntroSection = () => {
             >
               Learn More About Our Services
             </Link>
-            <button className="px-8 py-4 border-2 border-white/30 hover:border-white/50 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-white/10">
+            <Link 
+              to="/contact"
+              className="px-8 py-4 border-2 border-white/30 hover:border-white/50 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-white/10 text-center"
+            >
               Get In Touch
-            </button>
+            </Link>
           </div>
         </div>
       </div>
