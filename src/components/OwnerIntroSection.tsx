@@ -38,14 +38,19 @@ const OwnerIntroSection = () => {
         <div className="w-full lg:w-1/2 text-white space-y-8">
           <div className="space-y-6">
             <div className="space-y-2">
-              <div className="inline-block px-4 py-2 bg-red-600 rounded-full text-sm font-medium text-white">
-                Meet Our Founder
+              <div className="flex flex-wrap gap-3 mb-4">
+                <div className="inline-block px-4 py-2 bg-red-600 rounded-full text-sm font-medium text-white">
+                  Meet Our Founder
+                </div>
+                <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium text-white">
+                  15+ Years Experience
+                </div>
               </div>
               <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">
                 Stephanie Williams
               </h1>
               <p className="text-xl md:text-2xl text-white/80 font-light">
-                Owner & Operator of Teach1
+                Owner & Operator of Teach1 • 15+ Years Experience
               </p>
             </div>
             
@@ -54,7 +59,7 @@ const OwnerIntroSection = () => {
 
           <div className="space-y-6 text-base md:text-lg leading-relaxed max-w-2xl">
             <p className="text-white/90">
-              With years of experience in professional caregiving and healthcare education, 
+              With over 15 years of experience in professional caregiving and healthcare education, 
               Stephanie founded Teach1 to empower families with the skills and confidence 
               needed to provide exceptional care for their loved ones.
             </p>
