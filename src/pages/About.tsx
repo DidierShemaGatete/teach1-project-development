@@ -45,6 +45,27 @@ const About = () => {
           </div>
         </section>
 
+        {/* Flyer Introduction Section */}
+        <section className="section bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-8">
+              <h2 className="text-teach-blue">Meet Our Founder & Services</h2>
+              <p className="text-teach-gray-dark max-w-2xl mx-auto">
+                Get to know Stephanie Williams and discover the comprehensive range of services TEACH1 offers to families in the Triad and surrounding areas.
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <div className="max-w-2xl w-full">
+                <img 
+                  src="/lovable-uploads/flyer.png" 
+                  alt="TEACH1 Services Flyer featuring Stephanie Williams, Homecare and Skills Consultant, offering Basic In-Home Aide Skills, Fall Prevention, Infection Control, and CPR Certification in Triad and Surrounding Areas including Harnett, Lee, and Cumberland Counties"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Mission, Vision & Purpose Section */}
         <MissionSection variant="about" />
 
