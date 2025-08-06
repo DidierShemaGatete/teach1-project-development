@@ -49,7 +49,7 @@ export const mainServices = [
     id: 'home-management',
     title: 'Declutter & Clutter Management',
     description: 'A cluttered space can cause unnecessary stress. Our personalized decluttering services bring calm and order to your home. We\'ll help you sort, remove, and reorganize belongings for a fresh, open environment. See the difference for yourself – before and after each transformation.',
-    image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+    image: '/lovable-uploads/3bd746b9-17c7-400f-b9b4-c8a4150bd6dd.png',
     beforeAfterImages: {
       before: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       after: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
