@@ -18,7 +18,7 @@ export const mainServices = [
     id: 'preventive-care',
     title: 'Preventive Care (Infection and Fall Risk)',
     description: 'Comprehensive training on preventing infections and reducing fall risks to keep your loved ones safe at home.',
-    image: 'https://www.shutterstock.com/image-photo/doctor-applying-continuous-glucose-monitor-sensor-2384634509',
+    image: '/lovable-uploads/1c38fb98-943a-4b3f-a277-c4c0ac8d338f.png',
     features: [
       'Home safety assessment techniques',
       'Identifying and removing fall hazards',
