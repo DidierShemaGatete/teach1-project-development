@@ -57,7 +57,7 @@ const About = () => {
             <div className="flex justify-center">
               <div className="max-w-2xl w-full">
                 <img 
-                  src="/lovable-uploads/flyer.png" 
+                  src="/lovable-uploads/ffa7e46f-1fb5-4b89-a252-d6c96c36d791.png" 
                   alt="TEACH1 Services Flyer featuring Stephanie Williams, Homecare and Skills Consultant, offering Basic In-Home Aide Skills, Fall Prevention, Infection Control, and CPR Certification in Triad and Surrounding Areas including Harnett, Lee, and Cumberland Counties"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
