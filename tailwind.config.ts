@@ -129,7 +129,8 @@ export default {
 				'fade-out': 'fade-out 0.5s ease-out'
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
+				sans: ['Open Sans', 'Lato', 'Roboto', 'sans-serif'],
+				heading: ['Montserrat', 'Poppins', 'sans-serif'],
 				serif: ['Merriweather', 'serif']
 			}
 		}
