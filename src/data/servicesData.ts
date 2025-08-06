@@ -100,7 +100,7 @@ export const mainServices = [
     id: 'cpr-certification',
     title: 'CPR Certification',
     description: 'Become certified in CPR to be prepared for emergency situations and provide life-saving care.',
-    image: 'https://images.unsplash.com/photo-1584634731339-252e58471e5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+    image: '/lovable-uploads/2c2d312f-d4a0-4873-bbe2-85c5f8c8e89a.png',
     features: [
       'Adult CPR techniques',
       'AED (Automated External Defibrillator) training',
