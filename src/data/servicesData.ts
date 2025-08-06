@@ -32,7 +32,7 @@ export const mainServices = [
     id: 'plan-of-care',
     title: 'Plan of Care (Daily Routine)',
     description: 'Develop structured, personalized daily care routines that promote independence and wellbeing.',
-    image: '/lovable-uploads/e6dd7d9f-8d80-4e44-8515-8555bf52fae0.png',
+    image: '/lovable-uploads/6176118d-c7f8-4cc5-a814-8a142944e1c1.png',
     features: [
       'Creating structured daily schedules',
       'Medication management routines',
