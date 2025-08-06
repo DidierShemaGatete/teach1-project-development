@@ -42,28 +42,13 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
       );
     }
 
-    if (service.id === 'home-management' && service.beforeAfterImages) {
+    if (service.id === 'home-management') {
       return (
-        <div className="space-y-6">
-          <div className="grid grid-cols-1 gap-4">
-            <div>
-              <h4 className="text-lg font-semibold mb-3 text-center text-teach-blue">Before</h4>
-              <img
-                src={service.beforeAfterImages.before}
-                alt="Cluttered space before transformation"
-                className="w-full h-48 object-cover rounded-lg shadow-md"
-              />
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-3 text-center text-teach-blue">After</h4>
-              <img
-                src={service.beforeAfterImages.after}
-                alt="Organized space after transformation"
-                className="w-full h-48 object-cover rounded-lg shadow-md"
-              />
-            </div>
-          </div>
-        </div>
+        <img
+          src={service.image}
+          alt={service.title}
+          className="w-full h-64 object-cover rounded-lg shadow-md"
+        />
       );
     }
 

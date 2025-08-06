@@ -50,10 +50,6 @@ export const mainServices = [
     title: 'Declutter & Clutter Management',
     description: 'A cluttered space can cause unnecessary stress. Our personalized decluttering services bring calm and order to your home. We\'ll help you sort, remove, and reorganize belongings for a fresh, open environment. See the difference for yourself – before and after each transformation.',
     image: '/lovable-uploads/3bd746b9-17c7-400f-b9b4-c8a4150bd6dd.png',
-    beforeAfterImages: {
-      before: '/lovable-uploads/68bcdac7-cc8d-4894-aa4a-1b54865e9204.png',
-      after: '/lovable-uploads/68bcdac7-cc8d-4894-aa4a-1b54865e9204.png'
-    },
     features: [
       'Home safety and accessibility assessment',
       'Decluttering strategies for safer navigation',
