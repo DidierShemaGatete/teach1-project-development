@@ -95,7 +95,7 @@ export const mainServices = [
     id: 'private-homecare-referral',
     title: 'Private Homecare Referral Services',
     description: 'We offer thoughtful and compassionate homecare referral guidance, helping families connect with trusted professionals to support their loved ones with dignity and care.',
-    image: 'https://images.unsplash.com/photo-1607013251379-e6eecfffe234?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+    image: '/src/assets/hamburger.jpg',
     features: [
       'Vetted caregiver referral network'
     ]
