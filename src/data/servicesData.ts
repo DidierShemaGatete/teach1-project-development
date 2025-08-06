@@ -77,7 +77,7 @@ export const mainServices = [
     id: 'skills-refresher',
     title: 'Refresher on Skills',
     description: 'Update and reinforce your caregiving skills with refresher training sessions.',
-    image: 'https://images.unsplash.com/photo-1594824020510-8e3ef2145de5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+    image: '/lovable-uploads/fceb9f6f-65be-49d7-8120-50edf77c99c1.png',
     features: [
       'Review of previously learned techniques',
       'Updates on best practices and new methods',
