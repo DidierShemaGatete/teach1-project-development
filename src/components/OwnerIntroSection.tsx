@@ -4,9 +4,21 @@ import { Link } from 'react-router-dom';
 
 const OwnerIntroSection = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-teach-blue to-teach-blue-dark">
-      <div className="container-custom min-h-screen flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 py-12 lg:py-0">
-        {/* Image Section */}
+    <section 
+      className="min-h-screen relative bg-gradient-to-br from-teach-blue to-teach-blue-dark"
+      style={{
+        backgroundImage: `url('/lovable-uploads/42dd1545-d780-4cac-8d83-25717d2cb15b.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh'
+      }}
+    >
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-teach-blue/90 to-teach-blue-dark/90"></div>
+      
+      <div className="container-custom min-h-screen flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 py-12 relative z-10">
+        {/* Profile Picture Section */}
         <div className="w-full lg:w-1/2 flex justify-center">
           <div className="relative">
             <div className="w-80 h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
@@ -26,7 +38,7 @@ const OwnerIntroSection = () => {
         <div className="w-full lg:w-1/2 text-white space-y-8">
           <div className="space-y-6">
             <div className="space-y-2">
-              <div className="inline-block px-4 py-2 bg-teach-orange rounded-full text-sm font-medium text-white">
+              <div className="inline-block px-4 py-2 bg-red-600 rounded-full text-sm font-medium text-white">
                 Meet Our Founder
               </div>
               <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">
@@ -37,7 +49,7 @@ const OwnerIntroSection = () => {
               </p>
             </div>
             
-            <div className="w-16 h-1 bg-teach-orange rounded-full"></div>
+            <div className="w-16 h-1 bg-red-600 rounded-full"></div>
           </div>
 
           <div className="space-y-6 text-base md:text-lg leading-relaxed max-w-2xl">

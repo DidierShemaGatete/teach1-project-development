@@ -129,8 +129,8 @@ export default {
 				'fade-out': 'fade-out 0.5s ease-out'
 			},
 			fontFamily: {
-				sans: ['Open Sans', 'system-ui', '-apple-system', 'sans-serif'],
-				serif: ['Montserrat', 'system-ui', '-apple-system', 'sans-serif']
+				sans: ['Inter', 'sans-serif'],
+				serif: ['Merriweather', 'serif']
 			}
 		}
 	},
