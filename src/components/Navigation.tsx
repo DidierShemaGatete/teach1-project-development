@@ -19,8 +19,8 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <LogoSVG 
-              width={220}
-              height={70}
+              width={250}
+              height={80}
               className="transition-transform hover:scale-105"
             />
           </Link>
