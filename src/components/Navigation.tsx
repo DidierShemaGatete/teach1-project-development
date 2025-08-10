@@ -26,7 +26,7 @@ const Navigation = () => {
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/80 backdrop-blur-md shadow-lg' 
+        ? 'bg-white/30 backdrop-blur-md shadow-lg' 
         : 'bg-white shadow-sm'
     }`}>
       <div className="container-custom py-4">
