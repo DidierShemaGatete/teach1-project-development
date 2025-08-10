@@ -18,14 +18,10 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/24f044f0-4a14-4eb5-90ab-0b84eee96bd6.png" 
-              alt="TEACH1 Care Logo" 
-              className="h-10 w-auto mr-3"
+              src="/lovable-uploads/78d3c2ff-37e8-4586-ae42-f58fc9f26f62.png" 
+              alt="TEACH1 Homecare+Skill Consultant LLC - Families Taking Care of Families" 
+              className="h-12 w-auto"
             />
-            <div className="flex flex-col">
-              <span className="text-xl font-serif font-bold text-teach-blue">TEACH<span className="text-teach-orange">1</span></span>
-              <span className="text-teach-gray-dark text-xs hidden sm:inline">Care Training</span>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
