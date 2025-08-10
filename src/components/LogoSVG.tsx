@@ -8,73 +8,79 @@ interface LogoSVGProps {
 
 const LogoSVG: React.FC<LogoSVGProps> = ({ 
   className = "", 
-  width = 200, 
-  height = 120 
+  width = 240, 
+  height = 140 
 }) => {
   return (
     <svg 
       width={width} 
       height={height} 
-      viewBox="0 0 200 120" 
+      viewBox="0 0 240 140" 
       className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* House roof */}
+      {/* House structure */}
+      {/* Roof */}
       <path 
-        d="M30 35 L100 15 L170 35 L170 45 L30 45 Z" 
+        d="M40 50 L120 25 L200 50 L200 60 L40 60 Z" 
         fill="#2C3E50"
       />
       
-      {/* Window on roof */}
-      <rect x="90" y="20" width="8" height="4" fill="#C0392B" />
-      <rect x="102" y="20" width="8" height="4" fill="#C0392B" />
-      <rect x="90" y="26" width="8" height="4" fill="#C0392B" />
-      <rect x="102" y="26" width="8" height="4" fill="#C0392B" />
+      {/* House wall */}
+      <rect x="70" y="60" width="100" height="25" fill="#F8F9FA" stroke="#E9ECEF" strokeWidth="1"/>
+      
+      {/* Window cross pattern on roof */}
+      <rect x="108" y="35" width="6" height="6" fill="#C53030" />
+      <rect x="116" y="35" width="6" height="6" fill="#C53030" />
+      <rect x="126" y="35" width="6" height="6" fill="#C53030" />
+      <rect x="108" y="43" width="6" height="6" fill="#C53030" />
+      <rect x="116" y="43" width="6" height="6" fill="#C53030" />
+      <rect x="126" y="43" width="6" height="6" fill="#C53030" />
       
       {/* Three figures holding hands */}
       {/* Left figure */}
-      <circle cx="60" cy="55" r="6" fill="#C0392B" />
+      <circle cx="80" cy="75" r="8" fill="#C53030" />
       <path 
-        d="M45 65 Q60 60 75 65 L75 75 Q60 70 45 75 Z" 
-        fill="#C0392B"
+        d="M65 88 Q80 82 95 88 L95 102 Q80 96 65 102 Z" 
+        fill="#C53030"
       />
-      <line x1="45" y1="70" x2="35" y2="65" stroke="#C0392B" strokeWidth="3" strokeLinecap="round" />
-      <line x1="75" y1="70" x2="85" y2="65" stroke="#C0392B" strokeWidth="3" strokeLinecap="round" />
+      <line x1="65" y1="95" x2="50" y2="88" stroke="#C53030" strokeWidth="4" strokeLinecap="round" />
+      <line x1="95" y1="95" x2="110" y2="88" stroke="#C53030" strokeWidth="4" strokeLinecap="round" />
       
       {/* Center figure */}
-      <circle cx="100" cy="55" r="6" fill="#C0392B" />
+      <circle cx="120" cy="75" r="8" fill="#C53030" />
       <path 
-        d="M85 65 Q100 60 115 65 L115 75 Q100 70 85 75 Z" 
-        fill="#C0392B"
+        d="M105 88 Q120 82 135 88 L135 102 Q120 96 105 102 Z" 
+        fill="#C53030"
       />
-      <line x1="85" y1="70" x2="75" y2="65" stroke="#C0392B" strokeWidth="3" strokeLinecap="round" />
-      <line x1="115" y1="70" x2="125" y2="65" stroke="#C0392B" strokeWidth="3" strokeLinecap="round" />
+      <line x1="105" y1="95" x2="95" y2="88" stroke="#C53030" strokeWidth="4" strokeLinecap="round" />
+      <line x1="135" y1="95" x2="150" y2="88" stroke="#C53030" strokeWidth="4" strokeLinecap="round" />
       
       {/* Right figure */}
-      <circle cx="140" cy="55" r="6" fill="#C0392B" />
+      <circle cx="160" cy="75" r="8" fill="#C53030" />
       <path 
-        d="M125 65 Q140 60 155 65 L155 75 Q140 70 125 75 Z" 
-        fill="#C0392B"
+        d="M145 88 Q160 82 175 88 L175 102 Q160 96 145 102 Z" 
+        fill="#C53030"
       />
-      <line x1="125" y1="70" x2="115" y2="65" stroke="#C0392B" strokeWidth="3" strokeLinecap="round" />
-      <line x1="155" y1="70" x2="165" y2="65" stroke="#C0392B" strokeWidth="3" strokeLinecap="round" />
+      <line x1="145" y1="95" x2="135" y2="88" stroke="#C53030" strokeWidth="4" strokeLinecap="round" />
+      <line x1="175" y1="95" x2="190" y2="88" stroke="#C53030" strokeWidth="4" strokeLinecap="round" />
       
-      {/* Connecting hands */}
-      <line x1="75" y1="65" x2="85" y2="65" stroke="#C0392B" strokeWidth="3" strokeLinecap="round" />
-      <line x1="115" y1="65" x2="125" y2="65" stroke="#C0392B" strokeWidth="3" strokeLinecap="round" />
+      {/* Connecting hands/arms */}
+      <line x1="95" y1="88" x2="105" y2="88" stroke="#C53030" strokeWidth="4" strokeLinecap="round" />
+      <line x1="135" y1="88" x2="145" y2="88" stroke="#C53030" strokeWidth="4" strokeLinecap="round" />
       
       {/* TEACH1 text */}
-      <text x="100" y="95" textAnchor="middle" className="fill-current text-gray-900" style={{ fontSize: '20px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
+      <text x="120" y="118" textAnchor="middle" fill="#2D3748" style={{ fontSize: '22px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif', letterSpacing: '1px' }}>
         TEACH1
       </text>
       
       {/* Subtitle */}
-      <text x="100" y="108" textAnchor="middle" className="fill-current text-red-600" style={{ fontSize: '8px', fontWeight: '600', fontFamily: 'Arial, sans-serif' }}>
+      <text x="120" y="130" textAnchor="middle" fill="#C53030" style={{ fontSize: '9px', fontWeight: '600', fontFamily: 'Arial, sans-serif', letterSpacing: '0.5px' }}>
         HOMECARE+SKILL CONSULTANT, LLC.
       </text>
       
       {/* Bottom text */}
-      <text x="100" y="118" textAnchor="middle" className="fill-current text-gray-900" style={{ fontSize: '7px', fontFamily: 'Arial, sans-serif' }}>
+      <text x="120" y="140" textAnchor="middle" fill="#2D3748" style={{ fontSize: '8px', fontFamily: 'Arial, sans-serif', letterSpacing: '0.3px' }}>
         FAMILIES TAKING CARE OF FAMILIES
       </text>
     </svg>
