@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import ProcessedLogo from '@/components/ProcessedLogo';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img 
+            <ProcessedLogo
               src="/lovable-uploads/78d3c2ff-37e8-4586-ae42-f58fc9f26f62.png" 
               alt="TEACH1 Homecare+Skill Consultant LLC - Families Taking Care of Families" 
               className="h-12 w-auto"
