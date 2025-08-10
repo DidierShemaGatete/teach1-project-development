@@ -70,6 +70,10 @@ export const removeBackground = async (imageElement: HTMLImageElement): Promise<
     
     if (!outputCtx) throw new Error('Could not get output canvas context');
     
+    // Fill background with pure white
+    outputCtx.fillStyle = '#FFFFFF';
+    outputCtx.fillRect(0, 0, outputCanvas.width, outputCanvas.height);
+    
     // Draw original image
     outputCtx.drawImage(canvas, 0, 0);
     
@@ -81,11 +85,17 @@ export const removeBackground = async (imageElement: HTMLImageElement): Promise<
     );
     const data = outputImageData.data;
     
-    // Apply inverted mask to alpha channel
+    // Apply the mask to create white background
     for (let i = 0; i < result[0].mask.data.length; i++) {
-      // Invert the mask value (1 - value) to keep the subject instead of the background
-      const alpha = Math.round((1 - result[0].mask.data[i]) * 255);
-      data[i * 4 + 3] = alpha;
+      const maskValue = result[0].mask.data[i];
+      // If background (mask value > 0.5), make it white
+      if (maskValue > 0.5) {
+        const pixelIndex = i * 4;
+        data[pixelIndex] = 255;     // R
+        data[pixelIndex + 1] = 255; // G
+        data[pixelIndex + 2] = 255; // B
+        data[pixelIndex + 3] = 255; // A
+      }
     }
     
     outputCtx.putImageData(outputImageData, 0, 0);
@@ -102,8 +112,8 @@ export const removeBackground = async (imageElement: HTMLImageElement): Promise<
             reject(new Error('Failed to create blob'));
           }
         },
-        'image/png',
-        1.0
+        'image/jpeg',
+        0.9
       );
     });
   } catch (error) {
