@@ -17,6 +17,18 @@ const Book = () => {
   const [serviceType, setServiceType] = useState("");
   const [autoAdvance, setAutoAdvance] = useState(false);
   const isMobileRef = useRef(false);
+  
+  // Form data state
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    sessionFormat: 'in-person',
+    preferredDate: '',
+    preferredTime: '',
+    additionalInfo: ''
+  });
 
   // Check if the device is mobile based on screen width
   useEffect(() => {
@@ -30,17 +42,73 @@ const Book = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const getServiceDisplayName = (serviceType: string) => {
+    switch(serviceType) {
+      case 'basic-skills': return 'Basic In-Home Aide Skills';
+      case 'fall-prevention': return 'Fall Prevention Training';
+      case 'infection-control': return 'Infection Control Guidance';
+      case 'home-care': return 'Home Care Services';
+      case 'consultancy': return 'Caregiving Skills Consultancy';
+      default: return serviceType;
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    // In a real app, you would send the form data to your backend
+    // Create email body with all form data
+    const emailSubject = `New Booking Request - ${getServiceDisplayName(serviceType)}`;
+    const emailBody = `
+New Booking Request
+
+Service: ${getServiceDisplayName(serviceType)}
+
+Contact Information:
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Session Details:
+Format: ${formData.sessionFormat === 'in-person' ? 'In-Person' : 'Online'}
+Preferred Date: ${formData.preferredDate}
+Preferred Time: ${formData.preferredTime}
+
+Additional Information:
+${formData.additionalInfo || 'None provided'}
+
+Please contact me to confirm this booking.
+
+Best regards,
+${formData.firstName} ${formData.lastName}
+    `.trim();
+
+    // Create mailto link
+    const mailtoLink = `mailto:teachs1stephanie@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
     toast({
-      title: "Booking Confirmed!",
-      description: "We've received your booking request. You'll receive a confirmation email shortly.",
+      title: "Email Client Opening",
+      description: "Your email client will open with the booking details. Please send the email to complete your booking request.",
     });
     
     // Reset form
-    e.currentTarget.reset();
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      sessionFormat: 'in-person',
+      preferredDate: '',
+      preferredTime: '',
+      additionalInfo: ''
+    });
+    setServiceType('');
     setStep(1);
   };
 
@@ -226,13 +294,23 @@ const Book = () => {
                           <label htmlFor="firstName" className="block text-sm font-medium">
                             First Name *
                           </label>
-                          <Input id="firstName" required />
+                          <Input 
+                            id="firstName" 
+                            value={formData.firstName}
+                            onChange={(e) => handleInputChange('firstName', e.target.value)}
+                            required 
+                          />
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="lastName" className="block text-sm font-medium">
                             Last Name *
                           </label>
-                          <Input id="lastName" required />
+                          <Input 
+                            id="lastName" 
+                            value={formData.lastName}
+                            onChange={(e) => handleInputChange('lastName', e.target.value)}
+                            required 
+                          />
                         </div>
                       </div>
                       
@@ -241,13 +319,25 @@ const Book = () => {
                           <label htmlFor="email" className="block text-sm font-medium">
                             Email Address *
                           </label>
-                          <Input id="email" type="email" required />
+                          <Input 
+                            id="email" 
+                            type="email" 
+                            value={formData.email}
+                            onChange={(e) => handleInputChange('email', e.target.value)}
+                            required 
+                          />
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="phone" className="block text-sm font-medium">
                             Phone Number *
                           </label>
-                          <Input id="phone" type="tel" required />
+                          <Input 
+                            id="phone" 
+                            type="tel" 
+                            value={formData.phone}
+                            onChange={(e) => handleInputChange('phone', e.target.value)}
+                            required 
+                          />
                         </div>
                       </div>
                       
@@ -255,7 +345,10 @@ const Book = () => {
                         <label className="block text-sm font-medium">
                           Preferred Session Format *
                         </label>
-                        <RadioGroup defaultValue="in-person">
+                        <RadioGroup 
+                          value={formData.sessionFormat}
+                          onValueChange={(value) => handleInputChange('sessionFormat', value)}
+                        >
                           <div className="flex space-x-6">
                             <div className="flex items-center space-x-2">
                               <RadioGroupItem value="in-person" id="in-person" />
@@ -274,13 +367,26 @@ const Book = () => {
                           <label htmlFor="preferredDate" className="block text-sm font-medium">
                             Preferred Date *
                           </label>
-                          <Input id="preferredDate" type="date" required />
+                          <Input 
+                            id="preferredDate" 
+                            type="date" 
+                            value={formData.preferredDate}
+                            onChange={(e) => handleInputChange('preferredDate', e.target.value)}
+                            required 
+                          />
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="preferredTime" className="block text-sm font-medium">
                             Preferred Time *
                           </label>
-                          <Select required onValueChange={handleTimeChange}>
+                          <Select 
+                            value={formData.preferredTime}
+                            onValueChange={(value) => {
+                              handleInputChange('preferredTime', value);
+                              handleTimeChange(value);
+                            }}
+                            required
+                          >
                             <SelectTrigger>
                               <SelectValue placeholder="Select time" />
                             </SelectTrigger>
@@ -300,6 +406,8 @@ const Book = () => {
                         <Textarea 
                           id="additionalInfo" 
                           placeholder="Please share any specific needs or questions you have"
+                          value={formData.additionalInfo}
+                          onChange={(e) => handleInputChange('additionalInfo', e.target.value)}
                           rows={4}
                         />
                       </div>
@@ -337,18 +445,25 @@ const Book = () => {
                         </p>
                       </div>
                       
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <h4 className="font-medium">Your Information</h4>
-                          <p className="text-teach-gray-dark">
-                            The information you provided will be used to contact you regarding your booking.
-                          </p>
+                          <h4 className="font-medium mb-2">Your Information</h4>
+                          <div className="text-sm text-teach-gray-dark space-y-1">
+                            <p><strong>Name:</strong> {formData.firstName} {formData.lastName}</p>
+                            <p><strong>Email:</strong> {formData.email}</p>
+                            <p><strong>Phone:</strong> {formData.phone}</p>
+                          </div>
                         </div>
                         <div>
-                          <h4 className="font-medium">Session Details</h4>
-                          <p className="text-teach-gray-dark">
-                            A confirmation email will be sent with all details after submission.
-                          </p>
+                          <h4 className="font-medium mb-2">Session Details</h4>
+                          <div className="text-sm text-teach-gray-dark space-y-1">
+                            <p><strong>Format:</strong> {formData.sessionFormat === 'in-person' ? 'In-Person' : 'Online'}</p>
+                            <p><strong>Date:</strong> {formData.preferredDate}</p>
+                            <p><strong>Time:</strong> {formData.preferredTime}</p>
+                            {formData.additionalInfo && (
+                              <p><strong>Additional Info:</strong> {formData.additionalInfo}</p>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>
