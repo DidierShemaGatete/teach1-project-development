@@ -17,7 +17,7 @@ const Navigation = () => {
       <div className="container-custom py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center -ml-12">
+          <Link to="/" className="flex items-center -ml-20">
             <LogoSVG 
               width={250}
               height={80}
