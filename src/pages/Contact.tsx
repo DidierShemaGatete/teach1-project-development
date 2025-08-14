@@ -1,26 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin, Clock, Printer } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Printer, Loader2 } from 'lucide-react';
+import { supabase, type ContactSubmission } from '@/lib/supabase';
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // In a real app, you would send the form data to your backend
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24-48 hours.",
-    });
-    
-    // Reset form
-    e.currentTarget.reset();
+    try {
+      const formData = new FormData(e.currentTarget);
+      
+      const contactData: ContactSubmission = {
+        first_name: formData.get('firstName') as string,
+        last_name: formData.get('lastName') as string,
+        email: formData.get('email') as string,
+        phone: formData.get('phone') as string || undefined,
+        subject: formData.get('subject') as string || undefined,
+        message: formData.get('message') as string,
+      };
+
+      // Insert into Supabase
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([contactData]);
+
+      if (error) throw error;
+
+      // Send notification emails
+      const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
+        body: { contactData }
+      });
+
+      if (emailError) {
+        console.error('Email sending failed:', emailError);
+        // Don't fail the form submission if email fails
+      }
+
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you within 24-48 hours.",
+      });
+      
+      // Reset form
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -72,41 +113,42 @@ const Contact = () => {
                       <label htmlFor="firstName" className="block text-sm font-medium">
                         First Name *
                       </label>
-                      <Input id="firstName" required />
+                      <Input id="firstName" name="firstName" required disabled={isSubmitting} />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="lastName" className="block text-sm font-medium">
                         Last Name *
                       </label>
-                      <Input id="lastName" required />
+                      <Input id="lastName" name="lastName" required disabled={isSubmitting} />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="block text-sm font-medium">
                       Email Address *
                     </label>
-                    <Input id="email" type="email" required />
+                    <Input id="email" name="email" type="email" required disabled={isSubmitting} />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="phone" className="block text-sm font-medium">
                       Phone Number
                     </label>
-                    <Input id="phone" type="tel" />
+                    <Input id="phone" name="phone" type="tel" disabled={isSubmitting} />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="subject" className="block text-sm font-medium">
                       Subject
                     </label>
-                    <Input id="subject" />
+                    <Input id="subject" name="subject" disabled={isSubmitting} />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="message" className="block text-sm font-medium">
                       Message *
                     </label>
-                    <Textarea id="message" rows={5} required />
+                    <Textarea id="message" name="message" rows={5} required disabled={isSubmitting} />
                   </div>
-                  <Button type="submit" className="bg-teach-blue hover:bg-teach-blue-dark text-white w-full">
-                    Send Message
+                  <Button type="submit" className="bg-teach-blue hover:bg-teach-blue-dark text-white w-full" disabled={isSubmitting}>
+                    {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </div>

@@ -10,12 +10,16 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
+import { Loader2 } from 'lucide-react';
+import { supabase, type BookingRequest } from '@/lib/supabase';
 
 const Book = () => {
   const { toast } = useToast();
   const [step, setStep] = useState(1);
   const [serviceType, setServiceType] = useState("");
   const [autoAdvance, setAutoAdvance] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const isMobileRef = useRef(false);
   
   // Form data state
@@ -57,59 +61,80 @@ const Book = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    // Create email body with all form data
-    const emailSubject = `New Booking Request - ${getServiceDisplayName(serviceType)}`;
-    const emailBody = `
-New Booking Request
-
-Service: ${getServiceDisplayName(serviceType)}
-
-Contact Information:
-Name: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Phone: ${formData.phone}
-
-Session Details:
-Format: ${formData.sessionFormat === 'in-person' ? 'In-Person' : 'Online'}
-Preferred Date: ${formData.preferredDate}
-Preferred Time: ${formData.preferredTime}
-
-Additional Information:
-${formData.additionalInfo || 'None provided'}
-
-Please contact me to confirm this booking.
-
-Best regards,
-${formData.firstName} ${formData.lastName}
-    `.trim();
-
-    // Create mailto link
-    const mailtoLink = `mailto:teachs1stephanie@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    if (!termsAccepted) {
+      toast({
+        title: "Terms Required",
+        description: "Please accept the terms and conditions to continue.",
+        variant: "destructive",
+      });
+      return;
+    }
     
-    // Open email client
-    window.location.href = mailtoLink;
+    setIsSubmitting(true);
     
-    toast({
-      title: "Email Client Opening",
-      description: "Your email client will open with the booking details. Please send the email to complete your booking request.",
-    });
-    
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      sessionFormat: 'in-person',
-      preferredDate: '',
-      preferredTime: '',
-      additionalInfo: ''
-    });
-    setServiceType('');
-    setStep(1);
+    try {
+      const bookingData: BookingRequest = {
+        service_type: serviceType,
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        session_format: formData.sessionFormat as 'in-person' | 'online',
+        preferred_date: formData.preferredDate,
+        preferred_time: formData.preferredTime,
+        additional_info: formData.additionalInfo || undefined,
+        terms_accepted: termsAccepted,
+      };
+
+      // Insert into Supabase
+      const { error } = await supabase
+        .from('booking_requests')
+        .insert([bookingData]);
+
+      if (error) throw error;
+
+      // Send notification emails
+      const { error: emailError } = await supabase.functions.invoke('send-booking-email', {
+        body: { bookingData }
+      });
+
+      if (emailError) {
+        console.error('Email sending failed:', emailError);
+        // Don't fail the form submission if email fails
+      }
+
+      toast({
+        title: "Booking Request Submitted!",
+        description: "We'll contact you within 24 hours to confirm your session. Check your email for confirmation details.",
+      });
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        sessionFormat: 'in-person',
+        preferredDate: '',
+        preferredTime: '',
+        additionalInfo: ''
+      });
+      setServiceType('');
+      setTermsAccepted(false);
+      setStep(1);
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your booking. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const nextStep = () => {
@@ -469,13 +494,18 @@ ${formData.firstName} ${formData.lastName}
                     </div>
                     
                     <div className="flex items-start space-x-2">
-                      <Checkbox id="terms" required />
+                      <Checkbox 
+                        id="terms" 
+                        checked={termsAccepted}
+                        onCheckedChange={(checked) => setTermsAccepted(checked as boolean)}
+                        disabled={isSubmitting}
+                      />
                       <div className="grid gap-1.5 leading-none">
                         <Label
                           htmlFor="terms"
                           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                         >
-                          I agree to the terms and conditions
+                          I agree to the terms and conditions *
                         </Label>
                         <p className="text-sm text-muted-foreground">
                           By submitting this form, you agree to our privacy policy and service terms.
@@ -484,14 +514,16 @@ ${formData.firstName} ${formData.lastName}
                     </div>
                     
                     <div className="pt-4 flex justify-between">
-                      <Button type="button" variant="outline" onClick={prevStep}>
+                      <Button type="button" variant="outline" onClick={prevStep} disabled={isSubmitting}>
                         Back
                       </Button>
                       <Button 
                         type="submit"
                         className="bg-teach-blue hover:bg-teach-blue-dark text-white"
+                        disabled={isSubmitting}
                       >
-                        Confirm Booking
+                        {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                        {isSubmitting ? 'Submitting...' : 'Confirm Booking'}
                       </Button>
                     </div>
                   </div>
