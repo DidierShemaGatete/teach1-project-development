@@ -1,15 +1,9 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+const supabaseUrl = "https://exncsjdfynfpjrrzfxll.supabase.co"
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV4bmNzamRmeW5mcGpycnpmeGxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUxNTM1OTgsImV4cCI6MjA3MDcyOTU5OH0.YdYW-3HQ6JlMro49egqL-cRSZ3lklN676Zho4zj3R58"
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.warn('Supabase environment variables are not configured. Please complete the Supabase integration setup.')
-}
-
-export const supabase = supabaseUrl && supabaseAnonKey 
-  ? createClient(supabaseUrl, supabaseAnonKey)
-  : null
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 export type ContactSubmission = {
   id?: string
