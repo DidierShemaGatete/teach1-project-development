@@ -76,6 +76,15 @@ const Book = () => {
     setIsSubmitting(true);
     
     try {
+      if (!supabase) {
+        toast({
+          title: "Configuration Error",
+          description: "Backend services are not configured. Please contact the administrator.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       const bookingData: BookingRequest = {
         service_type: serviceType,
         first_name: formData.firstName,

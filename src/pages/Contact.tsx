@@ -17,6 +17,15 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
+      if (!supabase) {
+        toast({
+          title: "Configuration Error",
+          description: "Backend services are not configured. Please contact the administrator.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       const formData = new FormData(e.currentTarget);
       
       const contactData: ContactSubmission = {
