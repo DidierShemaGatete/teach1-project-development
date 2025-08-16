@@ -93,7 +93,7 @@ const Footer = () => {
               <span className="text-sm font-medium">Follow Us:</span>
               <div className="flex space-x-8">
                 <a 
-                  href="https://www.linkedin.com/in/teach1-consultancy-4b7504376/" 
+                  href="https://www.linkedin.com/in/teach1-consultant-llc-4b7504376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="transition-transform hover:scale-110"
