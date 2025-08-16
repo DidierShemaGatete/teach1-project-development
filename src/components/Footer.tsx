@@ -103,7 +103,7 @@ const Footer = () => {
                   </div>
                 </a>
                 <a 
-                  href="https://www.facebook.com/profile.php?id=61578838132629" 
+                  href="https://www.facebook.com/share/17Et7roBkB/?mibextid=wwXIfr" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="transition-transform hover:scale-110"
