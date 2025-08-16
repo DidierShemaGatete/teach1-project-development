@@ -123,7 +123,7 @@ const Footer = () => {
                   </div>
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.instagram.com/teachs_1?igsh=MWJ0ZTcyd2FuMGp0cw==" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="transition-transform hover:scale-110"
