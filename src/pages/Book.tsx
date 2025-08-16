@@ -10,7 +10,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2 } from 'lucide-react';
+import { Loader2, TestTube } from 'lucide-react';
 import { supabase, type BookingRequest } from '@/lib/supabase';
 
 const Book = () => {
@@ -20,6 +20,7 @@ const Book = () => {
   const [autoAdvance, setAutoAdvance] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const [isTestMode, setIsTestMode] = useState(false);
   const isMobileRef = useRef(false);
   
   // Form data state
@@ -34,6 +35,21 @@ const Book = () => {
     additionalInfo: ''
   });
 
+  // Check for test mode and auto-fill email from URL
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const testEmail = urlParams.get('test-email');
+    
+    if (testEmail) {
+      setIsTestMode(true);
+      handleInputChange('email', testEmail);
+      toast({
+        title: "Test Mode Activated",
+        description: `Using test email: ${testEmail}`,
+      });
+    }
+  }, []);
+
   // Check if the device is mobile based on screen width
   useEffect(() => {
     const checkMobile = () => {
@@ -45,6 +61,31 @@ const Book = () => {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  const fillTestData = () => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const tomorrowStr = tomorrow.toISOString().split('T')[0];
+    
+    setFormData({
+      firstName: 'Test',
+      lastName: 'User',
+      email: 'didiershemagate03@gmail.com',
+      phone: '(555) 123-4567',
+      sessionFormat: 'in-person',
+      preferredDate: tomorrowStr,
+      preferredTime: '10:00 AM',
+      additionalInfo: 'This is a test booking to verify the system functionality.'
+    });
+    setServiceType('basic-skills');
+    setTermsAccepted(true);
+    setIsTestMode(true);
+    
+    toast({
+      title: "Test Data Filled",
+      description: "Form filled with test data. Ready for submission!",
+    });
+  };
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -107,7 +148,10 @@ const Book = () => {
 
       // Send notification emails
       const { error: emailError } = await supabase.functions.invoke('send-booking-email', {
-        body: { bookingData }
+        body: { 
+          bookingData,
+          testMode: isTestMode
+        }
       });
 
       if (emailError) {
@@ -116,8 +160,10 @@ const Book = () => {
       }
 
       toast({
-        title: "Booking Request Submitted!",
-        description: "We'll contact you within 24 hours to confirm your session. Check your email for confirmation details.",
+        title: isTestMode ? "Test Booking Submitted!" : "Booking Request Submitted!",
+        description: isTestMode 
+          ? "Test booking completed successfully. Check didiershemagate03@gmail.com for test emails."
+          : "We'll contact you within 24 hours to confirm your session. Check your email for confirmation details.",
       });
       
       // Reset form
@@ -133,6 +179,7 @@ const Book = () => {
       });
       setServiceType('');
       setTermsAccepted(false);
+      setIsTestMode(false);
       setStep(1);
     } catch (error) {
       console.error('Error submitting booking:', error);
@@ -185,10 +232,31 @@ const Book = () => {
         <section className="bg-teach-blue text-white py-16">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
-              <h1>Book a Session</h1>
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <h1>Book a Session</h1>
+                {isTestMode && (
+                  <div className="flex items-center gap-1 bg-orange-500 text-white px-2 py-1 rounded text-sm">
+                    <TestTube className="h-4 w-4" />
+                    TEST MODE
+                  </div>
+                )}
+              </div>
               <p className="text-xl text-teach-gray-light">
                 Let's get you started with the right caregiving training for your family's needs.
               </p>
+              
+              {/* Quick Test Data Fill Button */}
+              <div className="mt-6">
+                <Button
+                  type="button"
+                  onClick={fillTestData}
+                  variant="outline"
+                  className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+                >
+                  <TestTube className="h-4 w-4 mr-2" />
+                  Quick Fill Test Data
+                </Button>
+              </div>
             </div>
           </div>
         </section>

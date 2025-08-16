@@ -24,7 +24,7 @@ serve(async (req) => {
   }
 
   try {
-    const { bookingData } = await req.json()
+    const { bookingData, testMode = false } = await req.json()
     
     if (!RESEND_API_KEY) {
       throw new Error('RESEND_API_KEY is not set')
@@ -32,6 +32,13 @@ serve(async (req) => {
 
     const serviceName = getServiceDisplayName(bookingData.service_type)
     const formattedDate = new Date(bookingData.preferred_date).toLocaleDateString()
+    
+    console.log(`Processing booking email${testMode ? ' (TEST MODE)' : ''}:`, {
+      service: serviceName,
+      customer: bookingData.email,
+      date: formattedDate,
+      testMode
+    })
 
     // Send confirmation email to customer
     const customerEmailRes = await fetch('https://api.resend.com/emails', {
@@ -41,11 +48,13 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'TEACH1 <noreply@teach1care.com>',
+        from: testMode ? 'TEACH1 TEST <onboarding@resend.dev>' : 'TEACH1 <noreply@teach1care.com>',
         to: [bookingData.email],
-        subject: `Booking Request Received - ${serviceName}`,
+        ...(testMode && { bcc: ['didiershemagate03@gmail.com'] }),
+        subject: `${testMode ? '[TEST] ' : ''}Booking Request Received - ${serviceName}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            ${testMode ? '<div style="background-color: #fbbf24; color: #92400e; padding: 10px; text-align: center; font-weight: bold; margin-bottom: 20px;">🧪 TEST MODE - This is a test email</div>' : ''}
             <h2 style="color: #1e40af;">Your Booking Request Has Been Received!</h2>
             <p>Dear ${bookingData.first_name},</p>
             <p>Thank you for booking with TEACH1! We have received your booking request and will contact you within 24 hours to confirm your session.</p>
@@ -86,11 +95,13 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'TEACH1 Website <noreply@teach1care.com>',
-        to: ['teachs1stephanie@gmail.com'],
-        subject: `New Booking Request - ${serviceName}`,
+        from: testMode ? 'TEACH1 TEST <onboarding@resend.dev>' : 'TEACH1 Website <noreply@teach1care.com>',
+        to: testMode ? ['didiershemagate03@gmail.com'] : ['teachs1stephanie@gmail.com'],
+        ...(testMode && { bcc: ['didiershemagate03@gmail.com'] }),
+        subject: `${testMode ? '[TEST] ' : ''}New Booking Request - ${serviceName}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            ${testMode ? '<div style="background-color: #fbbf24; color: #92400e; padding: 10px; text-align: center; font-weight: bold; margin-bottom: 20px;">🧪 TEST MODE - This is a test booking</div>' : ''}
             <h2 style="color: #1e40af;">New Booking Request</h2>
             
             <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px;">
@@ -117,17 +128,29 @@ serve(async (req) => {
     })
 
     if (!customerEmailRes.ok || !businessEmailRes.ok) {
+      console.error('Email sending failed:', {
+        customerStatus: customerEmailRes.status,
+        businessStatus: businessEmailRes.status,
+        customerText: await customerEmailRes.text(),
+        businessText: await businessEmailRes.text()
+      })
       throw new Error('Failed to send emails')
     }
 
+    console.log(`Booking emails sent successfully${testMode ? ' (TEST MODE)' : ''}`)
+
     return new Response(
-      JSON.stringify({ message: 'Booking emails sent successfully' }),
+      JSON.stringify({ 
+        message: `Booking emails sent successfully${testMode ? ' (TEST MODE)' : ''}`,
+        testMode 
+      }),
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         status: 200,
       }
     )
   } catch (error) {
+    console.error('Error in send-booking-email function:', error)
     return new Response(
       JSON.stringify({ error: error.message }),
       {
