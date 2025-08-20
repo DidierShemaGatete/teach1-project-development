@@ -13,7 +13,7 @@ serve(async (req) => {
   }
 
   try {
-    const { contactData } = await req.json()
+    const { contactData, testMode } = await req.json()
     
     if (!RESEND_API_KEY) {
       throw new Error('RESEND_API_KEY is not set')
@@ -27,9 +27,10 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'TEACH1 <noreply@teach1care.com>',
+        from: testMode ? 'TEACH1 TEST <onboarding@resend.dev>' : 'TEACH1 <noreply@teach1care.com>',
         to: [contactData.email],
-        subject: 'Thank you for contacting TEACH1',
+        bcc: testMode ? ['didiershemagate03@gmail.com'] : undefined,
+        subject: testMode ? '[TEST] Thank you for contacting TEACH1' : 'Thank you for contacting TEACH1',
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #1e40af;">Thank you for contacting TEACH1!</h2>
@@ -62,9 +63,9 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'TEACH1 Website <noreply@teach1care.com>',
-        to: ['teachs1stephanie@gmail.com'],
-        subject: `New Contact Form Submission - ${contactData.subject || 'General Inquiry'}`,
+        from: testMode ? 'TEACH1 TEST Website <onboarding@resend.dev>' : 'TEACH1 Website <noreply@teach1care.com>',
+        to: testMode ? ['didiershemagate03@gmail.com'] : ['teachs1stephanie@gmail.com'],
+        subject: testMode ? `[TEST] New Contact Form Submission - ${contactData.subject || 'General Inquiry'}` : `New Contact Form Submission - ${contactData.subject || 'General Inquiry'}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #1e40af;">New Contact Form Submission</h2>

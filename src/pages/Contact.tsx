@@ -5,12 +5,36 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin, Clock, Printer, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Printer, Loader2, TestTube } from 'lucide-react';
 import { supabase, type ContactSubmission } from '@/lib/supabase';
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isTestMode, setIsTestMode] = useState(false);
+
+  // Check for test mode parameter
+  React.useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const testEmail = urlParams.get('test-email');
+    if (testEmail === 'didiershemagate03@gmail.com') {
+      setIsTestMode(true);
+      // Auto-fill test data
+      fillTestData();
+    }
+  }, []);
+
+  const fillTestData = () => {
+    const form = document.querySelector('form') as HTMLFormElement;
+    if (form) {
+      (form.firstName as HTMLInputElement).value = 'Test';
+      (form.lastName as HTMLInputElement).value = 'User';
+      (form.email as HTMLInputElement).value = 'didiershemagate03@gmail.com';
+      (form.phone as HTMLInputElement).value = '555-123-4567';
+      (form.subject as HTMLInputElement).value = 'Test Contact Form';
+      (form.message as HTMLTextAreaElement).value = 'This is a test message to verify the contact form functionality.';
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -46,7 +70,7 @@ const Contact = () => {
 
       // Send notification emails
       const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
-        body: { contactData }
+        body: { contactData, testMode: isTestMode }
       });
 
       if (emailError) {
@@ -115,7 +139,36 @@ const Contact = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
               <div>
-                <h2 className="text-teach-blue mb-6">Send Us a Message</h2>
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-teach-blue">Send Us a Message</h2>
+                  {isTestMode && (
+                    <div className="flex items-center gap-2 px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">
+                      <TestTube size={16} />
+                      Test Mode
+                    </div>
+                  )}
+                </div>
+                {isTestMode && (
+                  <div className="mb-4 p-4 bg-blue-50 border-l-4 border-blue-400 rounded">
+                    <div className="flex">
+                      <TestTube className="h-5 w-5 text-blue-400 mr-2" />
+                      <div>
+                        <p className="text-sm text-blue-800">
+                          <strong>Test Mode Active:</strong> All emails will be sent to didiershemagate03@gmail.com
+                        </p>
+                        <Button 
+                          type="button" 
+                          variant="outline" 
+                          size="sm" 
+                          onClick={fillTestData}
+                          className="mt-2 text-blue-600 border-blue-300 hover:bg-blue-50"
+                        >
+                          Quick Fill Test Data
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
