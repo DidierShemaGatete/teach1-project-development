@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Linkedin, Facebook, Youtube, Instagram } from 'lucide-react';
+import logo from '@/assets/teach1-logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,11 +14,12 @@ const Footer = () => {
           {/* Logo and About */}
           <div className="md:col-span-1">
             <div className="flex items-center mb-3">
-              <span className="text-2xl font-serif font-bold">TEACH<span className="text-teach-orange">1</span></span>
+              <img 
+                src={logo}
+                alt="TEACH1 Homecare + Skill Consultant"
+                className="h-12 w-auto"
+              />
             </div>
-            <p className="text-teach-gray-light text-sm mb-2">
-              TEACH1 Homecare + Skill Consultant, LLC.
-            </p>
             <p className="text-teach-gray-light text-sm mb-3">
               "Teaching Loved Ones to Care for Loved Ones" <br />
               Families Taking Care of Families

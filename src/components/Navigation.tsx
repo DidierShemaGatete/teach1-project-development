@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-import LogoSVG from '@/components/LogoSVG';
+import logo from '@/assets/teach1-logo.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,11 +32,11 @@ const Navigation = () => {
       <div className="container-custom py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center -ml-20">
-            <LogoSVG 
-              width={250}
-              height={80}
-              className="transition-transform hover:scale-105"
+          <Link to="/" className="flex items-center">
+            <img 
+              src={logo}
+              alt="TEACH1 Homecare + Skill Consultant"
+              className="h-16 w-auto transition-transform hover:scale-105"
             />
           </Link>
 
